@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Additional Benefits</title>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="PresStyle.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            var keyCheck = localStorage.getItem('authenticated');
+            var hours = 8760; // Reset when storage is more than 24hours
+            var now = new Date().getTime();
+            var setupTime = localStorage.getItem('setupTime');
+            
+            if (keyCheck !== 'yes') {
+                window.location.replace('authenticate.html');
+            }
+            
+            if (check === 'yes') {
+                window.location.replace('index.html');
+            }
+            if(now-setupTime > hours*60*60*1000) {
+                localStorage.clear();
+                localStorage.setItem('setupTime', now);
+            }
+        </script>
+    </head>
+
+    <body onload="collapse(), h34(), critIllness(), loading(), pageOpen(), clearTo()" style='background-color: rgba(0,0,0,0.85); padding: 0px; margin: 0px;'>
+        <img src="hmgLogo.jpg" alt="Henderson Management Group" id="hmgLogo" style='position: fixed;'>
+        
+        <div id="loading"> <!-- loading screen container -->
+            <div id="loading2"> <!-- loading text container -->
+                <a style="position: relative;">Loading...</a>
+                <p style="margin: 0px; padding: 0px"><a class="loadingText">If page does not open in 15 seconds</a> 
+                    <a onclick="forceOpen()" style="font-size: 1.6vw; color: cyan; cursor: pointer; position: relative; margin: 0px; padding: 0px;">Click Here</a></p>
+                <a class="loadingText" style="font-size: 1.4vw;">Note: Some features may not work properly if force opened</a>
+            </div>
+        </div>
+        
+        <div id="container">
+        <div id='pageCenter'>
+            <div style="padding-bottom: 11px; margin: 0px; border-width: 0px; display: inline-block;">
+                
+                <a id='authTest'></a>
+                <input type='button' id='testBtn' value='clear auth' onclick="clearAuth()">
+                <script>
+                    document.getElementById("authTest").innerHTML = localStorage.getItem('authenticated');
+                    
+                    function clearAuth() {
+                        localStorage.setItem('authenticated', 'no');
+                    }
+                </script>
+                
+                <table style="border-width: 0px;">
+                    <tr>
+                        <td style="width: 50%;">
+                            <a id="ail">American Income Life Insurance Company</a>
+                            <br><a style="font-size: 1.4vw;">7657 Golf Channel Dr. Orlando, FL 32819</a>
+                        </td>
+                        <td style="width: 25%;">
+                            <input type="text" id="fullyear" onblur="focusICU()" tabindex="-1">
+                        </td>
+                        <td>
+                            <input type="text" id="premium" onblur="focusICU2()" style='background-color: rgba(0,0,0,0.15); border-radius: 7px;' tabindex="-1">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <br>
+
+            <div style="padding: 0px; margin: 0px; border-width: 0px; display: inline-block;">
+                <table style="border-width: 0px; padding: 0px; margin: 0px;">
+                    <tr>
+                        <td style="width: 40%;">
+                            <div id="dedreptext" style="font-style: italic; font-weight: bold; font-size: 1.18vw;">DEDUCTABLE REPLACEMENT FROM ACCIDENT</div>
+                            <div id="h34text" style="font-style: italic; font-weight: bold; font-size: 1.18vw;">DEDUCTABLE REPLACEMENT ACCIDENT & ILLNESS</div>
+                        </td>
+                        <td>
+                            <input type="text" id="firstName" class="names" value="" style='background-color: rgba(0,0,0,0.15); border-radius: 7px;' tabindex="1">
+                        </td>
+                        <td>
+                            <input type="text" id="secondName" class="names" value="" style='background-color: rgba(0,0,0,0.15); border-radius: 7px;' tabindex="2">
+                        </td>
+                        <td>
+                            <input type="text" class="names" style='background-color: rgba(0,0,0,0.15); border-radius: 7px;' tabindex="3">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="DedRep" style="padding-top: 0px; padding-bottom: 3px; margin-top: 0px; display: inline-block;">
+                <table border="black">
+                    <tr>
+                        <td style="width:40%">
+                            <a class="titles">* Emergency Room:</a>
+                            <br>
+                            <a class="describe">For treatment received within 72 hours of accidental injury</a>
+                        </td>
+                        <td style="width:20%"> 
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="textbox" tabindex="4">
+                                </div>
+                            </div>
+                        </td>
+                        <td style="width:20%">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="textbox" tabindex="5">
+                                </div>
+                            </div>
+                        </td>
+                        <td style="width:20%">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="textbox" tabindex="6">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:40%">
+                            <a class="titles">* DAILY HOSPITAL ROOM (Per day up to 365 days)</a>
+                            <br>
+                            <a class="describe">From Accident</a>
+                        </td>
+                        <td style="width:20%">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="textbox" tabindex="7">
+                                </div>
+                            </div>
+                        </td>
+                        <td style="width:20%">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="textbox" tabindex="8">
+                                </div>
+                            </div>
+                        </td>
+                        <td style="width:20%">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="textbox" onblur="focusFullyear()" tabindex="9">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:40%">
+                            <a class="titles">* INTENSIVE CARE UNIT (Per day up to 14 days)</a>
+                            <br>
+                            <a class="describe">From Accident</a>
+                        </td>
+                        <td style="width:20%">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" id="ICU" class="textbox" tabindex="11">
+                                </div>
+                            </div>
+                        </td>
+                        <td style="width:20%">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="textbox" tabindex="12">
+                                </div>
+                            </div>
+                        </td>
+                        <td style="width:20%">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="textbox" tabindex="13">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Start A71 with H34 -->
+
+            <div id="A71H34" style="padding-top: 0px; padding-bottom: 3px; margin-top: 0px; display: inline-block;">
+                <table border="black">
+                    <tr>
+                        <td style="width:40%" rowspan="2">
+                            <a class="titles">* Emergency Room:</a>
+                            <br>
+                            <a class="describe">For treatment received within 72 hours of illness or accidental injury</a>
+                        </td>
+                        <td class='accill'>
+                            Accident
+                        </td>
+                        <td class='accill'>
+                            Illness
+                        </td>
+                        <td class='accill'>
+                            Accident
+                        </td> 
+                        <td class='accill'>
+                            Illness
+                        </td>
+                        <td class='accill'>
+                            Accident
+                        </td>
+                        <td class='accill'>
+                            Illness
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> 
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px; text-align: center;">
+                                    <input type="text" class="textbox" onblur="contER()" tabindex="4" style="width: 42%;">
+                                    <a style="font-size: 2.5vw; display: inline-block;">/</a>
+                                    <input type="text" id="erIllness" class="textbox" tabindex="-1" style="width: 42%;">
+                                </div>
+                            </div>
+                        </td>
+                        <td colspan="2">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px; text-align: center;">
+                                    <input type="text" class="textbox" tabindex="6" style="width: 42%;">
+                                    <a style="font-size: 2.5vw; display: inline-block;">/</a>
+                                    <input type="text" class="textbox" tabindex="7" style="width: 42%;">
+                                </div>
+                            </div>
+                        </td>
+                        <td colspan="2">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px; text-align: center;">
+                                    <input type="text" class="textbox" tabindex="8" style="width: 42%;">
+                                    <a style="font-size: 2.5vw; display: inline-block;">/</a>
+                                    <input type="text" class="textbox" tabindex="9" style="width: 42%;">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:40%">
+                            <a class="titles">* DAILY HOSPITAL ROOM (Per day up to 365 days)</a>
+                            <br>
+                            <a class="describe">From Illness or Accident</a>
+                        </td>
+                        <td colspan='2'>
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px; text-align: center;">
+                                    <input type="text" id="a71Daily" class="textbox" tabindex="10" style="width: 42%;">
+                                    <a style="font-size: 2.5vw; display: inline-block;">/</a>
+                                    <input type="text" class="textbox" tabindex="11" style="width: 42%;">
+                                </div>
+                            </div>
+                        </td>
+                        <td colspan='2'>
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px; text-align: center;">
+                                    <input type="text" class="textbox" tabindex="12" style="width: 42%;">
+                                    <a style="font-size: 2.5vw; display: inline-block;">/</a>
+                                    <input type="text" class="textbox" tabindex="13" style="width: 42%;">
+                                </div>
+                            </div>
+                        </td>
+                        <td colspan='2'>
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px; text-align: center;">
+                                    <input type="text" id="next" class="textbox" tabindex="14" onblur="focusPremium()" style="width: 42%;">
+                                    <a style="font-size: 2.5vw; display: inline-block;">/</a>
+                                    <input type="text" class="textbox" tabindex="15" onblur="focusICU2()" style="width: 42%;">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <script>
+                        $(document).ready(function () {
+                            $('#next').blur(function () {
+                                var yearly = parseInt($('#a71Daily').val() * 365);
+                                $("#premium").val(yearly);
+                            });
+                        });
+                    </script>
+                    <tr>
+                        <td style="width:40%">
+                            <a class="titles">* INTENSIVE CARE UNIT (Per day up to 14 days)</a>
+                            <br>
+                            <a class="describe">From Illness or Accident</a>
+                        </td>
+                        <td colspan='2'>
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px; text-align: center;">
+                                    <input type="text" id="ICU2" class="textbox" tabindex="-1" style="width: 42%;">
+                                    <a style="font-size: 2.5vw; display: inline-block;">/</a>
+                                    <input type="text" class="textbox" tabindex="17" style="width: 42%;">
+                                </div>
+                            </div>
+                        </td>
+                        <td colspan='2'>
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px; text-align: center;">
+                                    <input type="text" class="textbox" tabindex="18" style="width: 42%;">
+                                    <a style="font-size: 2.5vw; display: inline-block;">/</a>
+                                    <input type="text" class="textbox" tabindex="19" style="width: 42%;">
+                                </div>
+                            </div>
+                        </td>
+                        <td colspan='2'>
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px; text-align: center;">
+                                    <input type="text" class="textbox" onblur="returnER()" tabindex="20" style="width: 42%;">
+                                    <a style="font-size: 2.5vw; display: inline-block;">/</a>
+                                    <input type="text" class="textbox" tabindex="21" style="width: 42%;">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="border-top: 5px solid black;">
+                        <td>
+                            <a class="titles">* Outpatient Surgery</a>
+                        </td>
+                        <td colspan="6">
+                            <input type='text' class="textbox" style="font-size: 1.8vw; text-align: left;" tabindex="22">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <script>
+                var x = 0;
+
+                focusPremium = function getFocus() {
+                    if (x === 0) {
+                        document.getElementById("premium").focus();
+                        x = x + 1;
+                    }
+                }
+
+                focusFullyear = function getFocus() {
+                    document.getElementById("fullyear").focus();
+                }
+
+                focusICU = function getFocus() {
+                    document.getElementById("ICU").focus();
+                }
+
+                focusICU2 = function getFocus() {
+                    document.getElementById("ICU2").focus();
+                }
+
+                returnER = function getFocus() {
+                    if (x === 1) {
+                        document.getElementById("erIllness").focus();
+                        x = x + 1;
+                    }
+                };
+
+                contER = function getFocus() {
+                    document.getElementById("erIllness").focus();
+                }
+            </script>
+
+            <!-- End A71 with H34 -->
+
+            <div id="finalExp" style="padding-top: 8px; padding-bottom: 3px; display: inline-block;">
+                <table border="black">
+                    <tr>
+                        <td style="width:40%">
+                            <a class="titles" onclick="final()" style="cursor: pointer;">*</a><a class="titles"> FINAL EXPENSE ANY CAUSE</a>
+                            <br>
+                            <form>
+                                <input type="radio" id="FinalExpenseWL" name="FinalExpense" value="Whole Life" tabindex="23" style="margin-right: 0px; padding-right: 0px">
+                                <label for="FinalExpenseWL" class="radioLabels">Whole Life (5%)</label>
+                                <input type="radio" id="FinalExpenseTermLife" name="FinalExpense" value="Term Life" tabindex="-1" style="margin-right: 0px; padding-right: 0px;">
+                                <label for="FinalExpenseTermLife" class="radioLabels">Term Life</label>
+                            </form>
+                        </td>
+                        <td style="width:20%">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="textbox" tabindex="24">
+                                </div>
+                            </div>
+                        </td>
+                        <td style="width:20%">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="textbox" tabindex="25">
+                                </div>
+                            </div>
+                        </td>
+                        <td style="width:20%">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="textbox" tabindex="26">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="income" style="padding-top: 8px; padding-bottom: 3px; width: 80%; display: inline-block;">
+                <table border="black">
+                    <tr>
+                        <td style="width:40%;">
+                            <a class="titles" onclick="income()" style="cursor: pointer;">*</a><a class="titles"> Income Protecter</a>
+                            <br>
+                            <div style="margin-left: 15.7%;">
+                                <input type="radio" id="IncomeProtecterTermLife" name="IncomeProtector" value="Term Life" tabindex="27" style="margin-right: 0px; padding-right: 0px">
+                                <label for="IncomeProtectorTermLife" class="radioLabels">Term Life</label>
+                            </div>
+                        </td>
+                        <td style="width:20%;">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="ip1" tabindex="28"> 
+                                    <div style="display: inline-block; font-size: 1.4vw; margin-top: 10px;">@</div>
+                                    <input type="text" class="ip2" tabindex="29">
+                                </div>
+                            </div> 
+                        </td>
+                        <td style="width:20%;">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="ip1" tabindex="30">
+                                    <div style="display: inline-block; font-size: 1.4vw; margin-top: 10px;">@</div>
+                                    <input type="text" class="ip2" tabindex="31">
+                                </div>
+                            </div> 
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="mortgage" style="padding-top: 8px; padding-bottom: 3px; width: 80%; display: inline-block;">
+                <table border="black">
+                    <tr>
+                        <td style="width:40%">
+                            <a class="titles" onclick="mortgage()" style="cursor: pointer;">*</a><a class="titles"> Mortgage Protecter</a><br>
+                            <input type="radio" id="MortgageADB" name="MortgageProtector" value="ADB" tabindex="32" style="margin-right: 0px; padding-right: 0px">
+                            <label for="MortgageADB" class="radioLabels">ADB</label>
+                            <input type="radio" id="MortgageTermLife" name="MortgageProtector" value="Term Life" tabindex="-2" style="margin-right: 0px; padding-right: 0px;">
+                            <label for="MortgageTermLife" class="radioLabels">Term Life</label>
+                        </td>
+                        <td style="width:20%">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="textbox" tabindex="33">
+                                </div>
+                            </div>
+                        </td>
+                        <td style="width:20%">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="textbox" tabindex="34">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="education" style="padding-top: 8px; padding-bottom: 3px; width: 80%; display: inline-block;">
+                <table border="black">
+                    <tr>
+                        <td style="width:40%">
+                            <a class="titles" onclick="education()" style="cursor: pointer;">*</a><a class="titles"> Education Protector</a>
+                            <br>
+                            <form>
+                                <input type="radio" id="EducationADB" name="EducationProtecter" value="ADB" tabindex="35" style="margin-right: 0px; padding-right: 0px">
+                                <label for="EducationADB" class="radioLabels">ADB</label>
+                                <input type="radio" id="EducationTermLife" name="EducationProtecter" value="Term Life" tabindex="-3" style="margin-right: 0px; padding-right: 0px;">
+                                <label for="EducationTermLife" class="radioLabels">Term Life</label>
+                            </form>
+                        </td>
+                        <td style="width:20%">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="textbox" tabindex="36">
+                                </div>
+                            </div>
+                        </td>
+                        <td style="width:20%">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="textbox" tabindex="37">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="critIllness" style="padding-top: 8px; padding-bottom: 3px; width: 80%; display: inline-block;">
+                <table border="black">
+                    <tr>
+                        <td style="width:40%">
+                            <a class="titles" onclick="critIllness()" style="cursor: pointer;">*</a><a class="titles"> Critical Illness</a>
+                            <br>
+                            <a class="describe" style="margin-left: 1vw;">On Diagnosis</a>
+                        </td>
+                        <td style="width:20%">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="textbox" tabindex="38">
+                                </div>
+                            </div>
+                        </td>
+                        <td style="width:20%">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="textbox" tabindex="39">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="cancerbox" style="padding-top: 8px; padding-bottom: 3px; display: inline-block;">
+                <table border="black" style="float: left;">
+                    <tr>
+                        <td style="width:40%">
+                            <a class="titles" onclick="cancer()" style="cursor: pointer;">*</a><a class="titles"> Cancer Protecter</a>
+                            <br>
+                            <div style="padding: 9px;">
+                            </div>
+                        </td>
+                        <td style="width:20%">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="textbox" tabindex="40">
+                                </div>
+                            </div>
+                        </td>
+                        <td style="width:20%">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="textbox" tabindex="41">
+                                </div>
+                            </div>
+                        </td>
+                        <td style="width:20%">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="textbox" tabindex="42">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="accdeath" style="padding-top: 0px; padding-bottom: 3px; display: inline-block;">
+                <a id='adb1' style="font-style: italic; font-weight: bold; font-size: 1.18vw; padding-left: 0.75%;">ACCIDENTAL DEATH BENEFITS</a>
+                <table border="black">
+                    <tr>
+                        <td style="width:40%">
+                            <a class="titles">STANDARD ACCIDENTAL DEATH</a>
+                        </td>
+                        <td style="width:20%">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="textbox" tabindex="43">
+                                </div>
+                            </div>
+                        </td>
+                        <td style="width:20%">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="textbox" tabindex="44">
+                                </div>
+                            </div>
+                        </td>
+                        <td style="width:20%">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="textbox" tabindex="45">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:40%">
+                            <a class="titles">AUTO ACCIDENT DEATH</a>
+                        </td>
+                        <td style="width:20%">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="textbox" tabindex="46">
+                                </div>
+                            </div>
+                        </td>
+                        <td style="width:20%">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="textbox" tabindex="47">
+                                </div>
+                            </div>
+                        </td>
+                        <td style="width:20%">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="textbox" tabindex="48">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:40%">
+                            <a class="titles">COMMON CARRIER ACCIDENT DEATH</a>
+                        </td>
+                        <td style="width:20%">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="textbox" tabindex="49">
+                                </div>
+                            </div>
+                        </td>
+                        <td style="width:20%">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="textbox" tabindex="50">
+                                </div>
+                            </div>
+                        </td>
+                        <td style="width:20%">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="textbox" tabindex="51">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="accDis" style="padding-top: 3px; padding-bottom: 3px; display: inline-block;">    
+                <a id='adb2' style="font-style: italic; font-weight: bold; font-size: 1.18vw; padding-left: 0.75%;">ACCIDENTAL DISMEMBERMENT BENEFITS</a>
+                <br>
+                <div id='adb3' style="display: inline-block; font-size: 1.2vw; padding-left: 0.75%;">(1 HAND, 1 FOOT, 1 EYE)</div>
+                <table border="black">
+                    <tr>
+                        <td style="width:40%">
+                            <a class="titles">STANDARD ACCIDENTAL</a>
+                        </td>
+                        <td style="width:20%">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="textbox" tabindex="52">
+                                </div>
+                            </div>
+                        </td>
+                        <td style="width:20%">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="textbox" tabindex="53">
+                                </div>
+                            </div>
+                        </td>
+                        <td style="width:20%">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="textbox" tabindex="54">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:40%">
+                            <a class="titles">AUTO ACCIDENT</a>
+                        </td>
+                        <td style="width:20%">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="textbox" tabindex="55">
+                                </div>
+                            </div>
+                        </td>
+                        <td style="width:20%">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="textbox" tabindex="56">
+                                </div>
+                            </div>
+                        </td>
+                        <td style="width:20%">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="textbox" tabindex="57">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:40%">
+                            <a class="titles">COMMON CARRIER ACCIDENT</a>
+                        </td>
+                        <td style="width:20%">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="textbox" tabindex="58">
+                                </div>
+                            </div>
+                        </td>
+                        <td style="width:20%">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="textbox" tabindex="59">
+                                </div>
+                            </div>
+                        </td>
+                        <td style="width:20%">
+                            <div style="margin-right: 0px;">
+                                <div style="padding-right: 0px;">
+                                    <input type="text" class="textbox" onblur="focusPremium()" tabindex="60">
+                                    <a tabindex="61"></a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <table style="border: 0px;">
+                    <tr>
+                        <td style="width: 95%;">
+
+                        </td>
+                        <td>
+                    <a style="font-size: 3vw;">2X</a>
+                    </td>
+                    </tr>
+                </table>
+            </div>
+            <div style="padding: 0px;"></div>
+            
+            <button id="myBtn" tabindex="-1" style="font-size: 1.6vw; cursor: pointer;">-Offered Through Freedom of Choice</button>
+            
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <img src="FocPages.png" id="focPages" alt="Freedom of Choice" style="padding-left: 3%; display: none;">
+                    <iframe id="cskPres" src="https://docs.google.com/presentation/d/e/2PACX-1vQEUEvYQ9fruEAGB0LFcpG7w5uvzvcFeh0BgX-g8Stk8Qg0_gf1dckFG8G7qB5YyA/embed?start=false&loop=false&delayms=3000" style='display: none; margin: auto; margin-top: 1.2%;' frameborder="0" width="95%" height="95%" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+                    <iframe id="willPres" src="https://docs.google.com/presentation/d/e/2PACX-1vTEUV0ymOUYkhWW780I48rYUQOxReDS4dkCXk06Pn-hX7KWQntNZ24SNZYqWpGkmQ/embed?start=false&loop=false&delayms=3000" style='display: none; margin: auto; margin-top: 1.2%;' frameborder="0" width="95%" height="95%" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>                
+                </div>
+            </div><br>
+            
+            <div style='width:100%;'>
+                <button id="pBtn" class="presBtn" style="margin-top: 60px;" tabindex="-1">Child Safe Kit</button>
+            </div>
+            
+            <div style='width:100%;'>
+                <button id="willBtn" class="presBtn" tabindex="-1">Will Kit</button>
+            </div>
+
+            <div style='width:100%;'>
+                <button type="button" class="addremove" onclick="collapse()" tabindex="-1">Add/Remove</button>
+            </div>
+            
+            <!-- Start container for policy buttons -->
+            <div id="buttons" style="padding-top: 3px; display: inline-block; width: 18%;">
+                <div style="padding: 2px;">
+                    <button onclick="a71()" class="bottomBtns" tabindex="-1" id="a71Button">A71000</button>
+                    <script>
+                        function a71() {
+                            var ded = document.getElementById("DedRep");
+                            var death = document.getElementById("accdeath");
+                            var dis = document.getElementById("accDis");
+                            var color = document.getElementById("a71Button");
+                            var h34 = document.getElementById("A71H34");
+                            var color2 = document.getElementById("h34Button");
+
+                            if (ded.style.display === "none") {
+                                ded.style.display = "block";
+                                dedreptext.style.display = "block";
+                                h34.style.display = "none";
+                                h34text.style.display = 'none';
+                                color.className = '';
+                                color2.className = "toggled";
+                            } else {
+                                ded.style.display = "none";
+                                dedreptext.style.display = "none";
+                                color.className = "toggled";
+                            }
+
+                            if (ded.style.display === "none" && h34.style.display === "none") {
+                                if (death.style.display !== "none") {
+                                    $(document).ready(function () {
+                                        $('#accdeath').slideToggle(1000);
+                                        $('#accDis').slideToggle(1000);
+                                    });
+                                }
+                            } else if (ded.style.display === "none" && h34.style.display === "block") {
+                                if (death.style.display === "none") {
+                                    $(document).ready(function () {
+                                        $('#accdeath').slideToggle(1000);
+                                        $('#accDis').slideToggle(1000);
+                                    });
+                                }
+                            } else if (ded.style.display === "block" && h34.style.display === "none") {
+                                if (death.style.display === "none") {
+                                    $(document).ready(function () {
+                                        $('#accdeath').slideToggle(1000);
+                                        $('#accDis').slideToggle(1000);
+                                    });
+                                }
+                            }
+                        }
+                    </script>
+                </div>
+
+                <div style="padding: 2px;">
+                    <button onclick="h34()" class="bottomBtns" tabindex="-1" id="h34Button">A71 + H34</button>
+                    <script>
+                        function h34() {
+                            var h34 = document.getElementById("A71H34");
+                            var color = document.getElementById("h34Button");
+                            var a71 = document.getElementById("DedRep");
+                            var color2 = document.getElementById("a71Button");
+                            var death = document.getElementById("accdeath");
+                            var dis = document.getElementById("accDis");
+
+                            if (h34.style.display === "none") {
+                                h34.style.display = "block";
+                                h34text.style.display = "block";
+                                a71.style.display = "none";
+                                color.className = '';
+                                color2.className = "toggled";
+                                dedreptext.style.display = 'none';
+                            } else {
+                                h34.style.display = "none";
+                                h34text.style.display = "none";
+                                color.className = 'toggled';
+                            }
+
+                            if (a71.style.display === "none" && h34.style.display === "none") {
+                                if (death.style.display !== "none") {
+                                    $(document).ready(function () {
+                                        $('#accdeath').slideToggle(1000);
+                                        $('#accDis').slideToggle(1000);
+                                    });
+                                }
+                            } else if (a71.style.display === "none" && h34.style.display === "block") {
+                                if (death.style.display === "none") {
+                                    $(document).ready(function () {
+                                        $('#accdeath').slideToggle(1000);
+                                        $('#accDis').slideToggle(1000);
+                                    });
+                                }
+                            } else if (a71.style.display === "block" && h34.style.display === "none") {
+                                if (death.style.display === "none") {
+                                    $(document).ready(function () {
+                                        $('#accdeath').slideToggle(1000);
+                                        $('#accDis').slideToggle(1000);
+                                    });
+                                }
+                            }
+                        }
+
+                    </script>
+                </div>
+
+                <div style="padding: 2px;">
+                    <button onclick="final()" class="bottomBtns" tabindex="-1" id="finalButton">Final Expense</button>
+                    <script>
+                        function final() {
+                            $(document).ready(function () {
+                                $("#finalExp").slideToggle(1000);
+                            });
+                            if (finalButton.className !== 'toggled') {
+                                finalButton.className = 'toggled';
+                            } else {
+                                finalButton.className = '';
+                            }
+                        }
+                    </script>
+                </div>
+
+                <div style="padding: 2px;">
+                    <button onclick="income()" class="bottomBtns" tabindex="-1" id="incomeButton">Income</button>
+                    <script>
+                        function income() {
+                            $(document).ready(function () {
+                                $("#income").slideToggle(1000);
+                            });
+                            if (incomeButton.className !== 'toggled') {
+                                incomeButton.className = 'toggled';
+                            } else {
+                                incomeButton.className = '';
+                            }
+                        }
+                    </script>
+                </div>
+
+                <div style="padding: 2px;">
+                    <button onclick="mortgage()" class="bottomBtns" tabindex="-1" id="mortgageButton">Mortgage</button>
+                    <script>
+                        function mortgage() {
+                            $(document).ready(function () {
+                                $("#mortgage").slideToggle(1000);
+                            });
+                            if (mortgageButton.className !== 'toggled') {
+                                mortgageButton.className = 'toggled';
+                            } else {
+                                mortgageButton.className = '';
+                            }
+                        }
+                    </script>
+                </div>
+
+                <div style="padding: 2px;">
+                    <button onclick="education()" class="bottomBtns" tabindex="-1" id="eduButton">Education</button>
+                    <script>
+                        function education() {
+                            $(document).ready(function () {
+                                $("#education").slideToggle(1000);
+                            });
+                            if (eduButton.className !== 'toggled') {
+                                eduButton.className = 'toggled';
+                            } else {
+                                eduButton.className = '';
+                            }
+                        }
+                    </script>
+                </div>
+
+                <div style="padding: 2px;">
+                    <button onclick="critIllness()" class="bottomBtns" tabindex="-1" id="critButton">Critical Illness</button>
+                    <script>
+                        function critIllness() {
+                            $(document).ready(function () {
+                                $("#critIllness").slideToggle(1000);
+                            });
+                            if (critButton.className !== 'toggled') {
+                                critButton.className = 'toggled';
+                            } else {
+                                critButton.className = '';
+                            }
+                        }
+                    </script>
+                </div>
+
+                <div style="padding: 2px;">
+                    <button tabindex="-1" class="bottomBtns" onclick="cancer()" id="cancerButton">Cancer</button>
+                    <script>
+                        function cancer() {
+                            $(document).ready(function () {
+                                $("#cancerbox").slideToggle(1000);
+                            });
+                            if (cancerButton.className !== 'toggled') {
+                                cancerButton.className = 'toggled';
+                            } else {
+                                cancerButton.className = '';
+                            }
+                        }
+                    </script>
+                </div>
+            </div>
+            <!-- End container for policy buttons -->
+            
+            <div style="width: 100%;">
+                <button id="takeover" tabindex="-1" onclick="nameSave(), openWindow()">Help</button>
+            </div>
+            </div> <!-- end "pageCenter" -->
+        </div> <!-- end "container" -->
+
+            <script>
+                function collapse() {
+                    $(document).ready(function () {
+                            $("#buttons").slideToggle(1000);
+                    });
+                    
+                }
+
+            </script>
+        
+        <script>
+            var winRef; //This holds the reference to your page, to see later it is open or not
+
+            function openWindow() {  
+                var url = 'TakeOver.html';
+                if (typeof (winRef) === 'undefined' || winRef.closed) {
+                    winRef = window.open(url,  innerHeight='400px',innerWidth='300px',menubar='no',titlebar='no',"_blank");
+                }
+                else {
+                    try {
+                        winRef.document; //if this throws an exception then we have no access to the child window - probably domain change so we open a new window
+                    }
+                    catch (e) {
+                        winRef = window.open(url, "_blank");
+                    }
+                winRef.focus();
+                }
+}
+        </script>
+        
+        <!--Page opening and resizing functions-->
+        <script>
+            function loading() {
+                $(document).ready(function () {
+                    $("#loading").fadeOut(1000);
+                    $("#hmgLogo").animate({opacity: '0.2'}, 1500);
+                });
+            }
+
+            function pageOpen() {
+                $(document).ready(function () {
+                    setTimeout(function () {
+                        $("#pageCenter").slideDown(1000);
+                        $("#pageCenter").animate({width: '70%'}, 250);
+                    }, 1250);
+                });
+            }
+
+            function forceOpen() {
+                $("#loading").fadeOut(1000);
+                setTimeout(function () {
+                    $("#pageCenter").slideDown(1000);
+                    $("#pageCenter").animate({width: '70%'}, 250);
+                }, 1250);
+            }
+            
+            var titles = document.getElementsByClassName("titles");
+            var describe = document.getElementsByClassName("describe");
+            var textbox = document.getElementsByClassName("textbox");
+            var ip1 = document.getElementsByClassName("ip1");
+            var ip2 = document.getElementsByClassName("ip2");
+            var names = document.getElementsByClassName("names");
+            var accill = document.getElementsByClassName("accill");
+            var radio = document.getElementsByClassName("radioLabels");
+            var i;
+            window.onresize = function () {
+                if (window.innerWidth <= 868) {
+                    $("#pageCenter").animate({width: '95%'}, 250);
+                    ail.style.fontSize = '2.5vw';
+                    dedreptext.style.fontSize = '1.75vw';
+                    h34text.style.fontSize = '1.75vw';
+                    adb1.style.fontSize = '1.75vw';
+                    adb2.style.fontSize = '1.75vw';
+                    adb3.style.fontSize = '1.75vw';
+                    for (i = 0; i < titles.length; i++) {
+                        titles[i].style.fontSize = "2vw";
+                    }
+                    for (i = 0; i < describe.length; i++) {
+                        describe[i].style.fontSize = "1.81vw";
+                    }
+                    for (i = 0; i < textbox.length; i++) {
+                        textbox[i].style.fontSize = "3.4vw";
+                    }
+                    for (i = 0; i < ip1.length; i++) {
+                        ip1[i].style.fontSize = "4.1vw";
+                    }
+                    for (i = 0; i < ip2.length; i++) {
+                        ip2[i].style.fontSize = "4.1vw";
+                    }
+                    for (i = 0; i < names.length; i++) {
+                        names[i].style.fontSize = "3.3vw";
+                    }
+                    for (i = 0; i < accill.length; i++) {
+                        accill[i].style.fontSize = "1.81vw";
+                    }
+                    for (i = 0; i < radio.length; i++) {
+                        radio[i].style.fontSize = "1.8vw";
+                    }
+                } else if (window.innerWidth >= 900) {
+                    $("#pageCenter").animate({width: '70%'}, 250);
+                    ail.style.fontSize = '1.6vw';
+                    dedreptext.style.fontSize = '1.18vw';
+                    h34text.style.fontSize = '1.18vw';
+                    adb1.style.fontSize = '1.18vw';
+                    adb2.style.fontSize = '1.18vw';
+                    adb3.style.fontSize = '1.2vw';
+                    for (i = 0; i < titles.length; i++) {
+                        titles[i].style.fontSize = "1.21vw";
+                    }
+                    for (i = 0; i < describe.length; i++) {
+                        describe[i].style.fontSize = "1.1vw";
+                    }
+                    for (i = 0; i < textbox.length; i++) {
+                        textbox[i].style.fontSize = "2.5vw";
+                    }
+                    for (i = 0; i < ip1.length; i++) {
+                        ip1[i].style.fontSize = "2.5vw";
+                    }
+                    for (i = 0; i < ip2.length; i++) {
+                        ip2[i].style.fontSize = "2.5vw";
+                    }
+                    for (i = 0; i < names.length; i++) {
+                        names[i].style.fontSize = "2vw";
+                    }
+                    for (i = 0; i < accill.length; i++) {
+                        accill[i].style.fontSize = "1.1vw";
+                    }
+                    for (i = 0; i < radio.length; i++) {
+                        radio[i].style.fontSize = "1.2vw";
+                    }
+                };
+            };
+        </script>
+        <script>
+                var modal = document.getElementById("myModal");
+                var btn = document.getElementById("myBtn");
+                var foc = document.getElementById('focPages');
+                var cskBtn = document.getElementById("pBtn");
+                var cskSlides = document.getElementById('cskPres');
+                var willBtn = document.getElementById("willBtn");
+                var willSlides = document.getElementById('willPres');
+
+                btn.onclick = function () {
+                    modal.style.display = "block";
+                    foc.style.display = 'block';
+                };
+                
+                cskBtn.onclick = function () {
+                    modal.style.display = "block";
+                    cskSlides.style.display = 'block';
+                };
+                
+                willBtn.onclick = function () {
+                    modal.style.display = "block";
+                    willSlides.style.display = 'block';
+                };
+                
+                window.onclick = function (event) {
+                    if (event.target === modal) {
+                        modal.style.display = "none";
+                        foc.style.display = 'none';
+                        cskSlides.style.display = 'none';
+                        willSlides.style.display = 'none';
+                    }
+                };
+            </script>
+            
+            <!-- function to transfer names between pres and TO -->
+            <script>
+                function nameSave() {
+                    if (typeof(Storage) !== 'undefined') {
+                        window.firstnames = document.getElementById('firstName').value;
+                        window.secondnames = document.getElementById('secondName').value;
+                        localStorage.setItem('saveName1', window.firstnames);
+                        localStorage.setItem('saveName2', window.secondnames);
+                    }
+                }
+            </script>
+            
+            <script>
+                function clearTo() {
+                    localStorage.removeItem('saveLead');
+                 }
+            </script>
+        <!-- Version: 3b -->
+        <!-- Created by Lee Kieslor Jr on 8/29/2020. -->
+        <!-- Last edited 11/08/2020 by Lee Kieslor Jr -->
+        <!-- Use of this software without a license is prohibited -->
+        <!-- pee pee poo poo -->
+    </body>
+</html>
