@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Authenticate</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="PresStyle.css">
+        <script>
+            var key = '121697102720';
+            var check = localStorage.getItem('authenticated');
+            var hours = 8760; // Reset when storage is more than 24hours
+            var now = new Date().getTime();
+            var setupTime = localStorage.getItem('setupTime');
+            
+            if (check === 'yes') {
+                window.location.replace('index.html');
+            }
+            
+            if(now-setupTime > hours*60*60*1000) {
+                localStorage.clear();
+                localStorage.setItem('setupTime', now);
+            }
+        </script>
+    </head>
+    <body style='background-color: rgba(0,0,0,0.85);'>
+        <div id="pageCenter2" style="width: 30%;">
+            <div style='margin: 3%;'>
+                <a>Authentication Key: </a>
+                <input type="password" id='authKey'>
+                <input type='button' id='enter' onclick="auth()" value="Enter">
+            </div>
+        </div>
+        <script>
+            function auth() {
+                var keyEnter = document.getElementById('authKey').value;               
+                if (key === keyEnter) {
+                    localStorage.setItem('authenticated', 'yes');
+                    window.location.replace('index.html');
+                    var now = new Date().getTime();
+                    var setupTime = localStorage.getItem('setupTime');
+                    if (setupTime == null) {
+                        localStorage.setItem('setupTime', now);
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
