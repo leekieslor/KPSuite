@@ -513,3 +513,8 @@ and open the template in the editor.
                 width: 97%;
                 font-size: 3vw;
             }
+
+            .tips {
+                font-size: 1.5vw;
+                font-family: sans-serif;
+            }
