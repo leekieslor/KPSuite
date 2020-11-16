@@ -484,36 +484,65 @@ and open the template in the editor.
                 font-size: 1.2vw;
             }
             
-            .toCol1 {
+            .leadInfoCol1 {
                 width: 33%;
                 text-align: right;
                 border: 1px solid black;
-                padding: 2%;
-                font-size: 2vw;
+                padding: 0.5%;
+                font-size: 2.5vw;
             }
             
-            .toCol2 {
+            .leadInfoCol2 {
                 align-content: center;
-                width: 33%;
+                width: 66%;
                 border: 1px solid black;
-                padding: 0.7%;
-                padding-left: 1.5%;
+                padding: 0.5%;
+            }
+            
+            .leadInfoCol3 {
+                width: 20%;
+                text-align: right;
+                border: 1px solid black;
+                font-size: 2.5vw;
+                padding: 0.5%;
+            }
+            
+            .leadInfoCol4 {
+                align-content: center;
+                width: 40%;
+                border: 1px solid black;
+                padding: 0.5%;
+            }
+            
+            .leadInfoRow {
+                align-content: center;
+                width: 20%;
+                border: 1px solid black;
+                padding: 0.5%;
+            }
+            
+            .toTableHead {
+                text-align: center;
+                border: 1px solid black;
+                padding: 1%;
+                font-size: 3vw;
+                background-color: rgba(0, 0, 0, 0.15);
             }
             
             .toAnswer {
                 margin: auto;
                 text-align: center;
-                width: 92%;
+                width: 95%;
                 font-size: 3vw;
             }
             
             .toAnswer2 {
                 margin: auto;
                 text-align: left;
-                width: 97%;
+                width: 100%;
                 font-size: 3vw;
             }
-
+            
             .tips {
                 font-size: 1.5vw;
                 font-family: sans-serif;
