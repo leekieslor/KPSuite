@@ -983,7 +983,7 @@
             <!-- End container for policy buttons -->
             
             <div style="width: 100%;">
-                <button id="takeover" tabindex="-1" onclick="nameSave(), openWindow()">Help</button>
+                <button id="takeover" tabindex="-1" onclick="openWindow()">Help</button>
             </div>
             
             <div style='width: 100%;'>
@@ -1006,7 +1006,7 @@
             var winRef; //This holds the reference to your page, to see later it is open or not
 
             function openWindow() {  
-                var url = 'TakeOver.html';
+                var url = 'tosheet.html';
                 if (typeof (winRef) === 'undefined' || winRef.closed) {
                     winRef = window.open(url,  innerHeight='400px',innerWidth='300px',menubar='no',titlebar='no',"_blank");
                 }
@@ -1160,6 +1160,7 @@
             </script>
             
             <!-- function to transfer names between pres and TO -->
+            <!--
             <script>
                 function nameSave() {
                     if (typeof(Storage) !== 'undefined') {
@@ -1176,9 +1177,10 @@
                     localStorage.removeItem('saveLead');
                  }
             </script>
+            -->
         <!-- Version: 3b -->
         <!-- Created by Lee Kieslor Jr on 8/29/2020. -->
-        <!-- Last edited 11/08/2020 by Lee Kieslor Jr -->
+        <!-- Last edited 11/16/2020 by Lee Kieslor Jr -->
         <!-- Use of this software without a license is prohibited -->
         <!-- pee pee poo poo -->
     </body>
