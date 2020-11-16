@@ -2,12 +2,11 @@
 
 <html>
     <head>
-        <title>Additional Benefits</title>
+        <title>KPSuite</title>
         <meta charset="windows-1252">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="PresStyle.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <!-- Begin auth check -->
         <script>
             var keyCheck = localStorage.getItem('authenticated');
             var hours = 8760; // Reset when storage is more than 24hours
@@ -17,16 +16,15 @@
             if (keyCheck !== 'yes') {
                 window.location.replace('authenticate.html');
             }
-            
+
             if(now-setupTime > hours*60*60*1000) {
                 localStorage.clear();
                 localStorage.setItem('setupTime', now);
             }
         </script>
-        <!-- End auth check -->
     </head>
 
-    <body onload="collapse(), h34(), critIllness(), loading(), pageOpen(), clearTo()" style='background-color: rgba(0,0,0,0.85); padding: 0px; margin: 0px;'>
+    <body onload="collapse(), h34(), critIllness(), loading(), pageOpen(), resize(), clearTo()" style='background-color: rgba(0,0,0,0.85); padding: 0px; margin: 0px;'>
         <img src="hmgLogo.jpg" alt="Henderson Management Group" id="hmgLogo" style='position: fixed;'>
         
         <div id="loading"> <!-- loading screen container -->
@@ -56,13 +54,14 @@
                     <tr>
                         <td style="width: 50%;">
                             <a id="ail">American Income Life Insurance Company</a>
-                            <br><a style="font-size: 1.4vw;">5551 Vanguard St. Orlando, FL 32819</a>
+                            <br><a style="font-size: 1.4vw;">5551 Vaguard St. Orlando, FL 32819</a>
                         </td>
-                        <td style="width: 25%;">
-                            <input type="text" id="fullyear" onblur="focusICU()" tabindex="-1">
+                        <td style="width: 25%; text-align: right;">
+                            <a id="yearlyHBtext" style="font-size: 1.2vw;">Yearly Hospital Benefit:</a>
+                            <!-- <input type="text" id="fullyear" onblur="focusICU()" tabindex="-1"> -->
                         </td>
                         <td>
-                            <input type="text" id="premium" onblur="focusICU2()" style='background-color: rgba(0,0,0,0.15); border-radius: 7px;' tabindex="-1">
+                            <input type="text" id="premium" onblur="focusICU2(), focusICU()" style='background-color: rgba(0,0,0,0.15); border-radius: 7px;' tabindex="-1">
                         </td>
                     </tr>
                 </table>
@@ -128,7 +127,7 @@
                         <td style="width:20%">
                             <div style="margin-right: 0px;">
                                 <div style="padding-right: 0px;">
-                                    <input type="text" class="textbox" tabindex="7">
+                                    <input type="text" id="a71daily" class="textbox" tabindex="7">
                                 </div>
                             </div>
                         </td>
@@ -142,11 +141,23 @@
                         <td style="width:20%">
                             <div style="margin-right: 0px;">
                                 <div style="padding-right: 0px;">
-                                    <input type="text" class="textbox" onblur="focusFullyear()" tabindex="9">
+                                    <input type="text" id="next" class="textbox" onblur="focusPremium()" tabindex="9">
                                 </div>
                             </div>
                         </td>
                     </tr>
+                    
+                    <!-- start a71 yearly benefit -->
+                    <script>
+                        $(document).ready(function () {
+                            $('#next').blur(function () {
+                                var yearly = parseInt($('#a71daily').val() * 365);
+                                $("#premium").val(yearly);
+                            });
+                        });
+                    </script>
+                    <!-- End a71 yearly benefit -->
+                    
                     <tr>
                         <td style="width:40%">
                             <a class="titles">* INTENSIVE CARE UNIT (Per day up to 14 days)</a>
@@ -263,21 +274,25 @@
                         <td colspan='2'>
                             <div style="margin-right: 0px;">
                                 <div style="padding-right: 0px; text-align: center;">
-                                    <input type="text" id="next" class="textbox" tabindex="14" onblur="focusPremium()" style="width: 42%;">
+                                    <input type="text" id="next2" class="textbox" tabindex="14" onblur="focusPremium()" style="width: 42%;">
                                     <a style="font-size: 2.5vw; display: inline-block;">/</a>
                                     <input type="text" class="textbox" tabindex="15" onblur="focusICU2()" style="width: 42%;">
                                 </div>
                             </div>
                         </td>
                     </tr>
+                    
+                    <!-- Begin calculate h34 + a71 yearly hospital benefit -->
                     <script>
                         $(document).ready(function () {
-                            $('#next').blur(function () {
+                            $('#next2').blur(function () {
                                 var yearly = parseInt($('#a71Daily').val() * 365);
                                 $("#premium").val(yearly);
                             });
                         });
                     </script>
+                    <!-- End calculate h34 + a71 yearly hospital benefit -->
+                    
                     <tr>
                         <td style="width:40%">
                             <a class="titles">* INTENSIVE CARE UNIT (Per day up to 14 days)</a>
@@ -787,6 +802,8 @@
                                         $('#accDis').slideToggle(1000);
                                     });
                                 }
+                                yearlyHBtext.style.display = 'none';
+                                premium.style.display = 'none';
                             } else if (ded.style.display === "none" && h34.style.display === "block") {
                                 if (death.style.display === "none") {
                                     $(document).ready(function () {
@@ -794,6 +811,8 @@
                                         $('#accDis').slideToggle(1000);
                                     });
                                 }
+                                yearlyHBtext.style.display = 'block';
+                                premium.style.display = 'block';
                             } else if (ded.style.display === "block" && h34.style.display === "none") {
                                 if (death.style.display === "none") {
                                     $(document).ready(function () {
@@ -801,6 +820,8 @@
                                         $('#accDis').slideToggle(1000);
                                     });
                                 }
+                                yearlyHBtext.style.display = 'block';
+                                premium.style.display = 'block';
                             }
                         }
                     </script>
@@ -837,6 +858,8 @@
                                         $('#accDis').slideToggle(1000);
                                     });
                                 }
+                                yearlyHBtext.style.display = 'none';
+                                premium.style.display = 'none';
                             } else if (a71.style.display === "none" && h34.style.display === "block") {
                                 if (death.style.display === "none") {
                                     $(document).ready(function () {
@@ -844,6 +867,8 @@
                                         $('#accDis').slideToggle(1000);
                                     });
                                 }
+                                yearlyHBtext.style.display = 'block';
+                                premium.style.display = 'block';
                             } else if (a71.style.display === "block" && h34.style.display === "none") {
                                 if (death.style.display === "none") {
                                     $(document).ready(function () {
@@ -851,6 +876,8 @@
                                         $('#accDis').slideToggle(1000);
                                     });
                                 }
+                                yearlyHBtext.style.display = 'block';
+                                premium.style.display = 'block';
                             }
                         }
 
@@ -957,6 +984,10 @@
             
             <div style="width: 100%;">
                 <button id="takeover" tabindex="-1" onclick="nameSave(), openWindow()">Help</button>
+            </div>
+            
+            <div style='width: 100%;'>
+                <a href='tips.html' target="_blank">Tips</a>
             </div>
             </div> <!-- end "pageCenter" -->
         </div> <!-- end "container" -->
