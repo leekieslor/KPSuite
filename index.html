@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="PresStyle.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Begin auth check -->
         <script>
             var keyCheck = localStorage.getItem('authenticated');
             var hours = 8760; // Reset when storage is more than 24hours
@@ -17,14 +18,12 @@
                 window.location.replace('authenticate.html');
             }
             
-            if (check === 'yes') {
-                window.location.replace('index.html');
-            }
             if(now-setupTime > hours*60*60*1000) {
                 localStorage.clear();
                 localStorage.setItem('setupTime', now);
             }
         </script>
+        <!-- End auth check -->
     </head>
 
     <body onload="collapse(), h34(), critIllness(), loading(), pageOpen(), clearTo()" style='background-color: rgba(0,0,0,0.85); padding: 0px; margin: 0px;'>
@@ -57,7 +56,7 @@
                     <tr>
                         <td style="width: 50%;">
                             <a id="ail">American Income Life Insurance Company</a>
-                            <br><a style="font-size: 1.4vw;">7657 Golf Channel Dr. Orlando, FL 32819</a>
+                            <br><a style="font-size: 1.4vw;">5551 Vanguard St. Orlando, FL 32819</a>
                         </td>
                         <td style="width: 25%;">
                             <input type="text" id="fullyear" onblur="focusICU()" tabindex="-1">
