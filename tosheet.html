@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Take Over</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="PresStyle.css">
+    </head>
+    <body style='background-color: rgba(0,0,0,0.85);'>
+        <div id="pageCenter2" style='width: 90%; margin-top: 0.5%;'>
+            <table style='width: 95%; margin: auto;'>
+                <tr>
+                    <td class="toTableHead" colspan="2">Lead Information</td>
+                </tr>
+                <tr>
+                    <td class="leadInfoCol1">Lead Source</td>
+                    <td class="leadInfoCol2">
+                        <input type="text" id="leadSource" class='toAnswer'>
+                    </td>
+                </tr>
+                <tr>
+                    <td class='leadInfoCol1'>Contact Name</td>
+                    <td class='leadInfoCol2'>
+                        <input type="text" id="contName" class='toAnswer'>
+                    </td>
+                </tr>
+                <tr>
+                    <td class='leadInfoCol1'>City/State</td>
+                    <td class='leadInfoCol2'>
+                        <input type="text" id="location" class='toAnswer'>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="leadInfoCol1">
+                        Choose One:
+                    </td>
+                    <td class="leadInfoCol2">
+                        <form id='maritalStatus'>
+                            <input type="radio" id="single" name="sigOtherStatus" value="Single">
+                            <label for='single'>Single</label>
+                            <input type="radio" id="married" name="sigOtherStatus" value="Married">
+                            <label for='married'>Married</label>
+                            <input type="radio" id="cohab" name="sigOtherStatus" value="Cohab">
+                            <label for='cohab'>Cohab</label>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            
+            <table style='width: 95%; margin: auto;'>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td class='toTableHead'>Primary</td>
+                    <td class='toTableHead'>Secondary</td>
+                </tr>
+                
+                <tr>
+                    <td class="leadInfoCol3">Name</td>
+                    <td class='leadInfoCol4'>
+                        <input type="text" id="primaryName" class='toAnswer'>
+                    </td>
+                    <td class='leadInfoCol4'>
+                        <input type="text" id="secondaryName" class='toAnswer'>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td class="leadInfoCol3">Age</td>
+                    <td class='leadInfoCol4'>
+                        <input type="text" id="primaryAge" class='toAnswer'>
+                    </td>
+                    <td class='leadInfoCol4'>
+                        <input type="text" id="secondaryAge" class='toAnswer'>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td class="leadInfoCol3">Occupation</td>
+                    <td class='leadInfoCol4'>
+                        <input type="text" id="primaryOccupation" class='toAnswer'>
+                    </td>
+                    <td class='leadInfoCol4'>
+                        <input type="text" id="secondaryOccupation" class='toAnswer'>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td class="leadInfoCol3">Income</td>
+                    <td class='leadInfoCol4'>
+                        <input type="text" id="primaryIncome" class='toAnswer'>
+                    </td>
+                    <td class='leadInfoCol4'>
+                        <input type="text" id="secondaryIncome" class='toAnswer'>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            
+            <table style='width: 95%; margin: auto;'>
+                <tr>
+                    <td class='toTableHead'>Children Age and Amount</td>
+                </tr>
+                <tr>
+                    <td class="leadInfoCol2" style='width: 100%;'>
+                        <input type="text" id="childInfo" class='toAnswer'>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            
+            <table style='width: 95%; margin: auto;'>
+                <tr>
+                    <td class='toTableHead' colspan='5'>Current Policies</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td class='leadInfoRow'>How Long</td>
+                    <td class='leadInfoRow'>Coverage Amount</td>
+                    <td class='leadInfoRow'>Premium</td>
+                    <td class='leadInfoRow'>Work Coverage</td>
+                </tr>
+                
+                <tr>
+                    <td class='leadInfoCol3'>Primary</td>
+                    <td class='leadInfoRow'>
+                        <input type="text" id='primaryHowLong' class='toAnswer' style='width:92%;'>
+                    </td>
+                    <td class='leadInfoRow'>
+                        <input type="text" id='primaryCoverage' class='toAnswer'style='width:92%;'>
+                    </td>
+                    <td class='leadInfoRow'>
+                        <input type="text" id='primaryPremium' class='toAnswer' style='width:92%;'>
+                    </td>
+                    <td class='leadInfoRow'>
+                        <form id="primaryWork">
+                            <input type="radio" id="primaryWorkYes" name="primaryWorkIns" value="yes">
+                            <label for='primaryWorkYes'>Yes</label>
+                            <input type="radio" id="primaryWorkNo" name="primaryWorkIns" value="no">
+                            <label for='primaryWorkNo'>No</label>
+                        </form>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td class='leadInfoCol3'>Spouse</td>
+                    <td class='leadInfoRow'>
+                        <input type="text" id='spouseHowLong' class='toAnswer' style='width:92%;'>
+                    </td>
+                    <td class='leadInfoRow'>
+                        <input type="text" id='spouseCoverage' class='toAnswer' style='width:92%;'>
+                    </td>
+                    <td class='leadInfoRow'>
+                        <input type="text" id='spousePremium' class='toAnswer' style='width:92%;'>
+                    </td>
+                    <td class='leadInfoRow'>
+                        <form id="spouseWork">
+                            <input type="radio" id="spouseWorkYes" name="spouseWorkIns" value="yes">
+                            <label for='spouseWorkYes'>Yes</label>
+                            <input type="radio" id="spouseWorkNo" name="spouseWorkIns" value="no">
+                            <label for='spouseWorkNo'>No</label>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            
+            <table style='width: 95%; margin: auto;'>
+                <tr>
+                    <td class='toTableHead' colspan="3">Potential Coverage</td>
+                </tr>
+                <tr>
+                    <td class="leadInfoCol3">Whole Life</td>
+                    <td class='leadInfoCol4'>
+                        <input type="text" id='primaryWholeLife' class='toAnswer'>
+                    </td>
+                    <td class='leadInfoCol4'>
+                        <input type="text" id='primaryTerm' class='toAnswer'>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="leadInfoCol3">Term</td>
+                    <td class='leadInfoCol4'>
+                        <input type="text" id='spouseWholeLife' class='toAnswer'>
+                    </td>
+                    <td class='leadInfoCol4'>
+                        <input type="text" id='spouseTerm' class='toAnswer'>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td colspan="3" style="text-align: center;">
+                        <form id='potentialCoverage'>
+                            <input type='checkbox' id='a71' name='coverage' value="a71">
+                            <label for='a71'>A71</label>
+                            <input type='checkbox' id='h34' name='coverage' value="h34">
+                            <label for='h34'>H34</label>
+                            <input type='checkbox' id='cnm' name='coverage' value="cnm">
+                            <label for='cnm'>CNM</label>
+                            <input type='checkbox' id='c20' name='coverage' value="c20">
+                            <label for='c20'>C20</label>
+                            <input type='checkbox' id='adb' name='coverage' value="adb">
+                            <label for='adb'>ADB</label>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            
+            <table style='width: 95%; margin: auto;'>
+                <tr>
+                    <td class='leadInfoCol1' style='text-align: center;'>How many levels of coverage?</td>
+                    <td class='leadInfoCol1' style='text-align: center;'>What premium did they guess?</td>
+                    <td class='leadInfoCol1' style='text-align: center;'>Actual premium</td>
+                </tr>
+                <tr>
+                    <td class='leadInfoCol1' style='text-align: center;'>
+                        <input type="text" id='coverageLevels' class='toAnswer'>
+                    </td>
+                    <td class='leadInfoCol1' style='text-align: center;'>
+                        <input type="text" id='guessedPremium' class='toAnswer'>
+                    </td>
+                    <td class='leadInfoCol1' style='text-align: center;'>
+                        <input type="text" id='actualPremium' class='toAnswer'>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            
+            <table style='width: 95%; margin: auto;'>
+                <tr>
+                    <td class='toTableHead'>Most Beneficial Benefit</td>
+                    <td class="toTableHead">Preexisting Conditions</td>
+                </tr>
+                <tr>
+                    <td class='leadInfoCol2' style='width: 50%'>
+                        <input type="text" id='mostBeneficial' class='toAnswer'>
+                    </td>
+                    <td class='leadInfoCol2' style='width: 50%'>
+                        <input type="text" id='preexisting' class='toAnswer'>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            
+            <table style='width: 95%; margin: auto;'>
+                <tr>
+                    <td class='toTableHead'>
+                        GET AT LEAST 2 REFERRALS!
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
