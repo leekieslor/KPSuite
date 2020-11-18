@@ -179,17 +179,18 @@ and open the template in the editor.
             #myBtn {
                 background-color: white;
                 border-width: 0px;
+                border-radius: 10px;
+                transition: background-color 0.5s, color 0.5s;
             }
             #myBtn:hover {
-                transition-duration: 0.4s;
                 background-color: black;
-                border-color: black;
                 color: white;
             }
 
             .presBtn {
                 background-color: #4CAF50; /* Green */
                 border: none;
+                border-radius: 10px;
                 color: white;
                 width: 18%;
                 padding: 7px 16px;
@@ -197,15 +198,21 @@ and open the template in the editor.
                 text-align: center;
                 text-decoration: none;
                 font-size: 1.15vw;
+                transition: width 0.5s;
+            }
+            
+            .presBtn:hover {
+                width: 20%;
             }
 
             .presBtn:hover {
                 cursor: pointer;
             }
-
-            #finalButton {
+            
+            .bottomBtns  {
                 background-color: #4CAF50;
                 border: none;
+                border-radius: 6px;
                 color: white;
                 width: 100%;
                 text-align: center;
@@ -213,15 +220,17 @@ and open the template in the editor.
                 display: inline-block;
                 font-size: 14px;
                 cursor: pointer;
+                transition: background-color 0.25s;
             }
-
-            #finalButton.toggled {
+            
+            .bottomBtns:hover {
                 background-color: black;
             }
 
-            #a71Button {
+            #critButton  {
                 background-color: #4CAF50;
                 border: none;
+                border-radius: 6px;
                 color: white;
                 width: 100%;
                 text-align: center;
@@ -229,16 +238,17 @@ and open the template in the editor.
                 display: inline-block;
                 font-size: 14px;
                 cursor: pointer;
-                
+                transition: background-color 0.25s;
             }
-
-            #a71Button.toggled {
+            
+            #critButton:hover {
                 background-color: black;
             }
-
+            
             #h34Button {
                 background-color: #4CAF50;
                 border: none;
+                border-radius: 6px;
                 color: white;
                 width: 100%;
                 text-align: center;
@@ -246,95 +256,17 @@ and open the template in the editor.
                 display: inline-block;
                 font-size: 14px;
                 cursor: pointer;
+                transition: background-color 0.25s;
             }
-
-            #h34Button.toggled {
-                background-color: black;
-            }
-
-            #incomeButton {
-                background-color: #4CAF50;
-                border: none;
-                color: white;
-                width: 100%;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 14px;
-                cursor: pointer;
-            }
-
-            #incomeButton.toggled {
-                background-color: black;
-            }
-
-            #mortgageButton {
-                background-color: #4CAF50;
-                border: none;
-                color: white;
-                width: 100%;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 14px;
-                cursor: pointer;
-            }
-
-            #mortgageButton.toggled {
-                background-color: black;
-            }
-
-            #eduButton {
-                background-color: #4CAF50;
-                border: none;
-                color: white;
-                width: 100%;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 14px;
-                cursor: pointer;
-            }
-
-            #eduButton.toggled {
-                background-color: black;
-            }
-
-            #cancerButton {
-                background-color: #4CAF50;
-                border: none;
-                color: white;
-                width: 100%;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 14px;
-                cursor: pointer;
-            }
-
-            #cancerButton.toggled {
-                background-color: black;
-            }
-
-            #critButton {
-                background-color: #4CAF50;
-                border: none;
-                color: white;
-                width: 100%;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 14px;
-                cursor: pointer;
-            }
-
-            #critButton.toggled {
+            
+            #h34Button:hover {
                 background-color: black;
             }
 
             .addremove {
                 background-color: #4CAF50; /* Green */
                 border: none;
+                border-radius: 10px;
                 color: white;
                 width: 18%;
                 padding: 7px 16px;
@@ -343,15 +275,18 @@ and open the template in the editor.
                 text-decoration: none;
                 display: inline-block;
                 font-size: 1.15vw;
+                transition: width 0.5s;
             }
 
             .addremove:hover {
                 cursor: pointer;
+                width: 20%;
             }
             
             #takeover {
                 background-color: #4CAF50; /* Green */
                 border: none;
+                border-radius: 10px;
                 color: white;
                 width: 18%;
                 padding: 7px 16px;
@@ -360,10 +295,12 @@ and open the template in the editor.
                 text-decoration: none;
                 display: inline-block;
                 font-size: 1.15vw;
+                transition: width 0.5s;
             }
 
             #takeover:hover {
                 cursor: pointer;
+                width: 20%;
             }
             
             #container {
@@ -546,4 +483,19 @@ and open the template in the editor.
             .tips {
                 font-size: 1.5vw;
                 font-family: sans-serif;
+            }
+            
+            #clearTO {
+                background-color: rgba(219, 0, 0, 1);
+                border: 0px;
+                padding: 1%;
+                width: 10%;
+                font-size: 2.2vw;
+                border-radius: 10px;
+                transition: width 0.5s, font-size 0.5s;
+            }
+            
+            #clearTO:hover {
+                width: 12.5%;
+                font-size: 3vw
             }

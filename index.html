@@ -24,7 +24,7 @@
         </script>
     </head>
 
-    <body onload="collapse(), h34(), critIllness(), loading(), pageOpen(), resize(), clearTo()" style='background-color: rgba(0,0,0,0.85); padding: 0px; margin: 0px;'>
+    <body onload="collapse(), h34(), critIllness(), loading(), pageOpen()" style='background-color: rgba(0,0,0,0.85); padding: 0px; margin: 0px;'>
         <img src="hmgLogo.jpg" alt="Henderson Management Group" id="hmgLogo" style='position: fixed;'>
         
         <div id="loading"> <!-- loading screen container -->
@@ -771,7 +771,7 @@
             
             <!-- Start container for policy buttons -->
             <div id="buttons" style="padding-top: 3px; display: inline-block; width: 18%;">
-                <div style="padding: 2px;">
+                <div style="padding: 2px; text-align: center;">
                     <button onclick="a71()" class="bottomBtns" tabindex="-1" id="a71Button">A71000</button>
                     <script>
                         function a71() {
@@ -983,7 +983,7 @@
             <!-- End container for policy buttons -->
             
             <div style="width: 100%;">
-                <button id="takeover" tabindex="-1" onclick="openWindow()">Help</button>
+                <button id="takeover" tabindex="-1" onclick="nameSave(), openWindow()">Help</button>
             </div>
             
             <div style='width: 100%;'>
@@ -1160,7 +1160,6 @@
             </script>
             
             <!-- function to transfer names between pres and TO -->
-            <!--
             <script>
                 function nameSave() {
                     if (typeof(Storage) !== 'undefined') {
@@ -1171,16 +1170,9 @@
                     }
                 }
             </script>
-            
-            <script>
-                function clearTo() {
-                    localStorage.removeItem('saveLead');
-                 }
-            </script>
-            -->
         <!-- Version: 3b -->
         <!-- Created by Lee Kieslor Jr on 8/29/2020. -->
-        <!-- Last edited 11/16/2020 by Lee Kieslor Jr -->
+        <!-- Last edited 11/08/2020 by Lee Kieslor Jr -->
         <!-- Use of this software without a license is prohibited -->
         <!-- pee pee poo poo -->
     </body>
