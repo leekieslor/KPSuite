@@ -39,17 +39,6 @@
         <div id="container">
         <div id='pageCenter'>
             <div style="padding-bottom: 11px; margin: 0px; border-width: 0px; display: inline-block;">
-                
-                <a id='authTest'></a>
-                <input type='button' id='testBtn' value='clear auth' onclick="clearAuth()">
-                <script>
-                    document.getElementById("authTest").innerHTML = localStorage.getItem('authenticated');
-                    
-                    function clearAuth() {
-                        localStorage.setItem('authenticated', 'no');
-                    }
-                </script>
-                
                 <table style="border-width: 0px;">
                     <tr>
                         <td style="width: 50%;">
@@ -988,6 +977,15 @@
             
             <div style='width: 100%;'>
                 <a href='tips.html' target="_blank">Tips</a>
+                <a id='authTest'></a>
+                <input type='button' id='testBtn' value='clear auth' onclick="clearAuth()">
+                <script>
+                    document.getElementById("authTest").innerHTML = localStorage.getItem('authenticated');
+                    
+                    function clearAuth() {
+                        localStorage.setItem('authenticated', 'no');
+                    }
+                </script>
             </div>
             </div> <!-- end "pageCenter" -->
         </div> <!-- end "container" -->
