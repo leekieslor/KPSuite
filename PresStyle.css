@@ -152,8 +152,8 @@ and open the template in the editor.
             }
 
             @keyframes dropDown {
-                from {top: -1000px; opacity: 0}
-                to {top: 0; opacity: 1}
+               0% {top: -1000px; opacity: 0}
+               100% {top: 0; opacity: 1}
             }
 
             /* The Close Button */
@@ -205,11 +205,23 @@ and open the template in the editor.
                 width: 20%;
             }
 
-            .presBtn:hover {
+            #finalButton {
+                background-color: #4CAF50;
+                border: none;
+                color: white;
+                width: 100%;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 14px;
                 cursor: pointer;
             }
             
-            .bottomBtns  {
+            #finalButton.toggled {
+                background-color: black;
+            }
+
+            #a71Button {
                 background-color: #4CAF50;
                 border: none;
                 border-radius: 6px;
@@ -223,7 +235,92 @@ and open the template in the editor.
                 transition: background-color 0.25s;
             }
             
+            #a71Button.toggled {
+                background-color: black;
+            }
+
+            
             .bottomBtns:hover {
+                background-color: black;
+            }
+            
+            #h34Button {
+                background-color: #4CAF50;
+                border: none;
+                color: white;
+                width: 100%;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 14px;
+                cursor: pointer;
+            }
+
+            #h34Button.toggled {
+                background-color: black;
+            }
+            
+            #incomeButton {
+                background-color: #4CAF50;
+                border: none;
+                color: white;
+                width: 100%;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 14px;
+                cursor: pointer;
+            }
+
+            #incomeButton.toggled {
+                background-color: black;
+            }
+            
+            #mortgageButton {
+                background-color: #4CAF50;
+                border: none;
+                color: white;
+                width: 100%;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 14px;
+                cursor: pointer;
+            }
+
+            #mortgageButton.toggled {
+                background-color: black;
+            }
+            
+            #eduButton {
+                background-color: #4CAF50;
+                border: none;
+                color: white;
+                width: 100%;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 14px;
+                cursor: pointer;
+            }
+
+            #eduButton.toggled {
+                background-color: black;
+            }
+            
+            #cancerButton {
+                background-color: #4CAF50;
+                border: none;
+                color: white;
+                width: 100%;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 14px;
+                cursor: pointer;
+            }
+
+            #cancerButton.toggled {
                 background-color: black;
             }
 
@@ -239,6 +336,10 @@ and open the template in the editor.
                 font-size: 14px;
                 cursor: pointer;
                 transition: background-color 0.25s;
+            }
+            
+            #critButton.toggled {
+                background-color: black;
             }
             
             #critButton:hover {
