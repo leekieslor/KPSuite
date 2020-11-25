@@ -11,10 +11,10 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="PresStyle.css">
     </head>
-    <body style='background-color: rgba(0,0,0,0.85);' onload="leadSourceLoad(), leadContactLoad(), leadLocationLoad(), primaryNameLoad(), 
-                secondNameLoad(), primAgeLoad(), secAgeLoad(), primOccLoad(), secOccLoad(), primIncomeLoad(), secIncomeLoad(), childLoad(), 
-                primHowLongLoad(), primCoverLoad(), primPremLoad(), spHowLongLoad(), spCoverLoad(), spPremLoad(), primWLLoad(), spWLLoad(), 
-                primTermLoad(), spTermLoad(), levelsLoad(), guessLoad(), actualLoad(), mostBenLoad(), preConLoad()">
+    <body style='background-color: rgba(0,0,0,0.85);' onload="leadSourceLoad(), leadContactLoad(), leadLocationLoad(), primaryNameLoad(),
+                    secondNameLoad(), primAgeLoad(), secAgeLoad(), primOccLoad(), secOccLoad(), primIncomeLoad(), secIncomeLoad(), childLoad(),
+                    primHowLongLoad(), primCoverLoad(), primPremLoad(), spHowLongLoad(), spCoverLoad(), spPremLoad(), primWLLoad(), spWLLoad(),
+                    primTermLoad(), spTermLoad(), levelsLoad(), guessLoad(), actualLoad(), mostBenLoad(), preConLoad()">
         <div id="pageCenter2" style='width: 90%; margin-top: 0.5%;'>
             <table style='width: 95%; margin: auto;'>
                 <tr>
@@ -29,7 +29,7 @@ and open the template in the editor.
                                 window.source = document.getElementById('leadSource').value;
                                 localStorage.setItem('saveSource', window.source);
                             }
-                            
+
                             function leadSourceLoad() {
                                 document.getElementById("leadSource").value = localStorage.getItem("saveSource");
 
@@ -46,7 +46,7 @@ and open the template in the editor.
                                 window.contact = document.getElementById('contName').value;
                                 localStorage.setItem('saveContact', window.contact);
                             }
-                            
+
                             function leadContactLoad() {
                                 document.getElementById("contName").value = localStorage.getItem("saveContact");
                             }
@@ -62,7 +62,7 @@ and open the template in the editor.
                                 window.locate = document.getElementById('location').value;
                                 localStorage.setItem('saveLocation', window.locate);
                             }
-                            
+
                             function leadLocationLoad() {
                                 document.getElementById("location").value = localStorage.getItem("saveLocation");
                             }
@@ -86,14 +86,14 @@ and open the template in the editor.
                 </tr>
             </table>
             <br>
-            
+
             <table style='width: 95%; margin: auto;'>
                 <tr>
                     <td>&nbsp;</td>
                     <td class='toTableHead'>Primary</td>
                     <td class='toTableHead'>Secondary</td>
                 </tr>
-                
+
                 <tr>
                     <td class="leadInfoCol3">Name</td>
                     <td class='leadInfoCol4'>
@@ -103,12 +103,12 @@ and open the template in the editor.
                                 window.primName = document.getElementById('primaryName').value;
                                 localStorage.setItem('savePrimName', window.primName);
                             }
-                            
+
                             function primaryNameLoad() {
                                 document.getElementById("primaryName").value = localStorage.getItem("savePrimName");
                             }
                         </script>
-                        
+
                     </td>
                     <td class='leadInfoCol4'>
                         <input type="text" id="secondaryName" class='toAnswer' onkeyup="secondNameSave()">
@@ -117,14 +117,14 @@ and open the template in the editor.
                                 window.secName = document.getElementById('secondaryName').value;
                                 localStorage.setItem('saveSecName', window.secName);
                             }
-                            
+
                             function secondNameLoad() {
                                 document.getElementById("secondaryName").value = localStorage.getItem("saveSecName");
                             }
                         </script>
                     </td>
                 </tr>
-                
+
                 <tr>
                     <td class="leadInfoCol3">Age</td>
                     <td class='leadInfoCol4'>
@@ -134,7 +134,7 @@ and open the template in the editor.
                                 window.primAge = document.getElementById('primaryAge').value;
                                 localStorage.setItem('savePrimAge', window.primAge);
                             }
-                            
+
                             function primAgeLoad() {
                                 document.getElementById("primaryAge").value = localStorage.getItem("savePrimAge");
                             }
@@ -147,14 +147,14 @@ and open the template in the editor.
                                 window.secAge = document.getElementById('secondaryAge').value;
                                 localStorage.setItem('saveSecAge', window.secAge);
                             }
-                            
+
                             function secAgeLoad() {
                                 document.getElementById("secondaryAge").value = localStorage.getItem("saveSecAge");
                             }
                         </script>
                     </td>
                 </tr>
-                
+
                 <tr>
                     <td class="leadInfoCol3">Occupation</td>
                     <td class='leadInfoCol4'>
@@ -164,7 +164,7 @@ and open the template in the editor.
                                 window.primOcc = document.getElementById('primaryOccupation').value;
                                 localStorage.setItem('savePrimOcc', window.primOcc);
                             }
-                            
+
                             function primOccLoad() {
                                 document.getElementById("primaryOccupation").value = localStorage.getItem("savePrimOcc");
                             }
@@ -177,14 +177,14 @@ and open the template in the editor.
                                 window.secOcc = document.getElementById('secondaryOccupation').value;
                                 localStorage.setItem('saveSecOcc', window.secOcc);
                             }
-                            
+
                             function secOccLoad() {
                                 document.getElementById("secondaryOccupation").value = localStorage.getItem("saveSecOcc");
                             }
                         </script>
                     </td>
                 </tr>
-                
+
                 <tr>
                     <td class="leadInfoCol3">Income</td>
                     <td class='leadInfoCol4'>
@@ -194,7 +194,7 @@ and open the template in the editor.
                                 window.primIncome = document.getElementById('primaryIncome').value;
                                 localStorage.setItem('savePrimIncome', window.primIncome);
                             }
-                            
+
                             function primIncomeLoad() {
                                 document.getElementById("primaryIncome").value = localStorage.getItem("savePrimIncome");
                             }
@@ -207,7 +207,7 @@ and open the template in the editor.
                                 window.secIncome = document.getElementById('secondaryIncome').value;
                                 localStorage.setItem('saveSecIncome', window.secIncome);
                             }
-                            
+
                             function secIncomeLoad() {
                                 document.getElementById("secondaryIncome").value = localStorage.getItem("saveSecIncome");
                             }
@@ -216,7 +216,7 @@ and open the template in the editor.
                 </tr>
             </table>
             <br>
-            
+
             <table style='width: 95%; margin: auto;'>
                 <tr>
                     <td class='toTableHead'>Children Age and Amount</td>
@@ -229,7 +229,7 @@ and open the template in the editor.
                                 window.chlid = document.getElementById('childInfo').value;
                                 localStorage.setItem('saveChild', window.chlid);
                             }
-                            
+
                             function childLoad() {
                                 document.getElementById("childInfo").value = localStorage.getItem("saveChild");
                             }
@@ -238,7 +238,7 @@ and open the template in the editor.
                 </tr>
             </table>
             <br>
-            
+
             <table style='width: 95%; margin: auto;'>
                 <tr>
                     <td class='toTableHead' colspan='5'>Current Policies</td>
@@ -250,7 +250,7 @@ and open the template in the editor.
                     <td class='leadInfoRow'>Premium</td>
                     <td class='leadInfoRow'>Work Coverage</td>
                 </tr>
-                
+
                 <tr>
                     <td class='leadInfoCol3'>Primary</td>
                     <td class='leadInfoRow'>
@@ -260,7 +260,7 @@ and open the template in the editor.
                                 window.primHL = document.getElementById('primaryHowLong').value;
                                 localStorage.setItem('primHowLong', window.primHL);
                             }
-                            
+
                             function primHowLongLoad() {
                                 document.getElementById("primaryHowLong").value = localStorage.getItem("primHowLong");
                             }
@@ -273,7 +273,7 @@ and open the template in the editor.
                                 window.primCover = document.getElementById('primaryCoverage').value;
                                 localStorage.setItem('primCoverage', window.primCover);
                             }
-                            
+
                             function primCoverLoad() {
                                 document.getElementById("primaryCoverage").value = localStorage.getItem("primCoverage");
                             }
@@ -286,7 +286,7 @@ and open the template in the editor.
                                 window.primPrem = document.getElementById('primaryPremium').value;
                                 localStorage.setItem('primPremium', window.primPrem);
                             }
-                            
+
                             function primPremLoad() {
                                 document.getElementById("primaryPremium").value = localStorage.getItem("primPremium");
                             }
@@ -301,7 +301,7 @@ and open the template in the editor.
                         </form>
                     </td>
                 </tr>
-                
+
                 <tr>
                     <td class='leadInfoCol3'>Spouse</td>
                     <td class='leadInfoRow'>
@@ -311,7 +311,7 @@ and open the template in the editor.
                                 window.spHL = document.getElementById('spouseHowLong').value;
                                 localStorage.setItem('spHowLong', window.spHL);
                             }
-                            
+
                             function spHowLongLoad() {
                                 document.getElementById("spouseHowLong").value = localStorage.getItem("spHowLong");
                             }
@@ -324,7 +324,7 @@ and open the template in the editor.
                                 window.spCover = document.getElementById('spouseCoverage').value;
                                 localStorage.setItem('spCoverage', window.spCover);
                             }
-                            
+
                             function spCoverLoad() {
                                 document.getElementById("spouseCoverage").value = localStorage.getItem("spCoverage");
                             }
@@ -337,7 +337,7 @@ and open the template in the editor.
                                 window.spPrem = document.getElementById('spousePremium').value;
                                 localStorage.setItem('spPremium', window.spPrem);
                             }
-                            
+
                             function spPremLoad() {
                                 document.getElementById("spousePremium").value = localStorage.getItem("spPremium");
                             }
@@ -354,7 +354,7 @@ and open the template in the editor.
                 </tr>
             </table>
             <br>
-            
+
             <table style='width: 95%; margin: auto;'>
                 <tr>
                     <td class='toTableHead' colspan="3">Potential Coverage</td>
@@ -368,7 +368,7 @@ and open the template in the editor.
                                 window.primWL = document.getElementById('primaryWholeLife').value;
                                 localStorage.setItem('primWholeLife', window.primWL);
                             }
-                            
+
                             function primWLLoad() {
                                 document.getElementById("primaryWholeLife").value = localStorage.getItem("primWholeLife");
                             }
@@ -381,7 +381,7 @@ and open the template in the editor.
                                 window.spouseWL = document.getElementById('spouseWholeLife').value;
                                 localStorage.setItem('spWholeLife', window.spouseWL);
                             }
-                            
+
                             function spWLLoad() {
                                 document.getElementById("spouseWholeLife").value = localStorage.getItem("spWholeLife");
                             }
@@ -397,7 +397,7 @@ and open the template in the editor.
                                 window.primT = document.getElementById('primaryTerm').value;
                                 localStorage.setItem('primaryTerm', window.primT);
                             }
-                            
+
                             function primTermLoad() {
                                 document.getElementById("primaryTerm").value = localStorage.getItem("primaryTerm");
                             }
@@ -410,14 +410,14 @@ and open the template in the editor.
                                 window.spouseT = document.getElementById('spouseTerm').value;
                                 localStorage.setItem('spouseTerm', window.spouseT);
                             }
-                            
+
                             function spTermLoad() {
                                 document.getElementById("spouseTerm").value = localStorage.getItem("spouseTerm");
                             }
                         </script>
                     </td>
                 </tr>
-                
+
                 <tr>
                     <td colspan="3" style="text-align: center;">
                         <form id='potentialCoverage'>
@@ -436,7 +436,7 @@ and open the template in the editor.
                 </tr>
             </table>
             <br>
-            
+
             <table style='width: 95%; margin: auto;'>
                 <tr>
                     <td class='leadInfoCol1' style='text-align: center;'>How many levels of coverage?</td>
@@ -451,7 +451,7 @@ and open the template in the editor.
                                 window.levels = document.getElementById('coverageLevels').value;
                                 localStorage.setItem('coverLevels', window.levels);
                             }
-                            
+
                             function levelsLoad() {
                                 document.getElementById("coverageLevels").value = localStorage.getItem("coverLevels");
                             }
@@ -464,7 +464,7 @@ and open the template in the editor.
                                 window.guess = document.getElementById('guessedPremium').value;
                                 localStorage.setItem('premGuess', window.guess);
                             }
-                            
+
                             function guessLoad() {
                                 document.getElementById("guessedPremium").value = localStorage.getItem("premGuess");
                             }
@@ -477,7 +477,7 @@ and open the template in the editor.
                                 window.actual = document.getElementById('actualPremium').value;
                                 localStorage.setItem('premActual', window.actual);
                             }
-                            
+
                             function actualLoad() {
                                 document.getElementById("actualPremium").value = localStorage.getItem("premActual");
                             }
@@ -486,7 +486,7 @@ and open the template in the editor.
                 </tr>
             </table>
             <br>
-            
+
             <table style='width: 95%; margin: auto;'>
                 <tr>
                     <td class='toTableHead'>Most Beneficial Benefit</td>
@@ -500,7 +500,7 @@ and open the template in the editor.
                                 window.beneficial = document.getElementById('mostBeneficial').value;
                                 localStorage.setItem('mostBen', window.beneficial);
                             }
-                            
+
                             function mostBenLoad() {
                                 document.getElementById("mostBeneficial").value = localStorage.getItem("mostBen");
                             }
@@ -513,7 +513,7 @@ and open the template in the editor.
                                 window.pexist = document.getElementById('preexisting').value;
                                 localStorage.setItem('preCon', window.pexist);
                             }
-                            
+
                             function preConLoad() {
                                 document.getElementById("preexisting").value = localStorage.getItem("preCon");
                             }
@@ -522,7 +522,7 @@ and open the template in the editor.
                 </tr>
             </table>
             <br>
-            
+
             <table style='width: 95%; margin: auto;'>
                 <tr>
                     <td class='toTableHead'>

@@ -8,612 +8,713 @@ and open the template in the editor.
     Author     : Lee Kieslor Jr
 */
 
-            table {
-                border-collapse: collapse;
-                border: 3px solid black;
-            }
-            tr {
-                height: 1vw;
-                padding: 0px;
-            }
-            td {
-                padding: 0px;
-            }
-            #ail {
-                font-size: 1.6vw;
-            }
-            .titles {
-                font-size: 1.21vw;
-                font-style: italic;
-                font-weight: bold;
-                text-align: left;
-                padding-left: 1%;
-            }
-            .describe {
-                font-size: 1.1vw;
-                text-align: left;
-                padding-left: 1%;
-            }
-            .textbox {
-                margin: 0px;
-                margin-right: 0px;
-                padding: 0%;
-                width: 100%;
-                align-self: center;
-                text-align: center;
-                font-size: 2.5vw;
-                border: 0px;
-            }
-            .textbox:focus {
-                margin: 0px;
-                margin-right: 0px;
-                padding: 0%;
-                width: 100%;
-                align-self: center;
-                text-align: center;
-                font-size: 2.5vw;
-                border: 0px;
-                background-color: rgba(0,0,0,0.1);
-            }
-            .ip1 {
-                padding: 0%;
-                margin: 0px;
-                margin-right: 0px;
-                width: 20%;
-                text-align: center;
-                font-size: 2.5vw;
-                border: 0px;
-                float: left;
-            }
-            .ip1:focus {
-                padding: 0%;
-                width: 20%;
-                margin: 0px;
-                margin-right: 0px;
-                text-align: center;
-                font-size: 2.5vw;
-                border: 0px;
-                background-color: rgba(0,0,0,0.1);
-                float: left;
-            }
-            .ip2 {
-                padding: 0%;
-                width: 66.5%;
-                margin: 0px;
-                margin-right: 0px;
-                text-align: center;
-                font-size: 2.5vw;
-                border: 0px;
-                float: right;
-            }
-            .ip2:focus {
-                padding: 0%;
-                width: 66.5%;
-                margin: 0px;
-                margin-right: 0px;
-                text-align: center;
-                font-size: 2.5vw;
-                border: 0px;
-                background-color: rgba(0,0,0,0.1);
-                float: right;
-            }
-            #fullyear {
-                margin-top: 4px;
-                padding: 4px;
-                width: 60%;
-                text-align: center;
-                font-size: 2.5vw;
-                border: 0px;
-            }
-            #premium {
-                font-size: 2.2vw;
-                width: 60%;
-                border: 0px;
-            }
-            .names {
-                font-size: 2vw;
-                width: 95%;
-                text-align: center;
-                border: 0px;
-            }
-            .accill {
-                font-size: 1.1vw;
-                text-align: center;
-                width: 10%;
-                font-weight: bold;
-            }
-            /* The Modal (background) */
-            .modal {
-                display: none; /* Hidden by default */
-                position: fixed; /* Stay in place */
-                z-index: 1; /* Sit on top */
-                padding-top: 2%; /* Location of the box */
-                left: 0;
-                top: 0;
-                width: 100%; /* Full width */
-                height: 110%; /* Full height */
-                overflow: auto; /* Enable scroll if needed */
-                background-color: rgb(0,0,0); /* Fallback color */
-                background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
-            }
+table {
+    border-collapse: collapse;
+    border: 3px solid black;
+}
+tr {
+    height: 1vw;
+    padding: 0px;
+}
+td {
+    padding: 0px;
+}
+#ail {
+    font-size: 1.6vw;
+}
+.titles {
+    font-size: 1.21vw;
+    font-style: italic;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 1%;
+}
+#pageHeader {
+    padding-bottom: 11px; 
+    margin: 0px; 
+    border-width: 0px; 
+    display: inline-block; 
+    width: 100%;
+}
+.headerContent {
+    width: 50%; 
+    float: left;
+}
+.describe {
+    font-size: 1.1vw;
+    text-align: left;
+    padding-left: 1%;
+}
 
-            /* Modal Content */
-            .modal-content {
-                background-color: #fefefe;
-                margin: auto;
-                padding: 6px;
-                border: 1px solid #888;
-                border-radius: 26px;
-                width: 80%;
-                height: 80%;
-                position: relative;
-                animation-name: dropDown;
-                animation-duration: 1s;
-            }
+.textbox {
+    margin: 0px;
+    margin-right: 0px;
+    padding: 0%;
+    width: 100%;
+    align-self: center;
+    text-align: center;
+    font-size: 2.5vw;
+    border: 0px;
+}
+.textbox:focus {
+    margin: 0px;
+    margin-right: 0px;
+    padding: 0%;
+    width: 100%;
+    align-self: center;
+    text-align: center;
+    font-size: 2.5vw;
+    border: 0px;
+    background-color: rgba(0,0,0,0.1);
+}
+.ip1 {
+    padding: 0%;
+    margin: 0px;
+    margin-right: 0px;
+    width: 20%;
+    text-align: center;
+    font-size: 2.5vw;
+    border: 0px;
+    float: left;
+}
+.ip1:focus {
+    padding: 0%;
+    width: 20%;
+    margin: 0px;
+    margin-right: 0px;
+    text-align: center;
+    font-size: 2.5vw;
+    border: 0px;
+    background-color: rgba(0,0,0,0.1);
+    float: left;
+}
+.ip2 {
+    padding: 0%;
+    width: 66.5%;
+    margin: 0px;
+    margin-right: 0px;
+    text-align: center;
+    font-size: 2.5vw;
+    border: 0px;
+    float: right;
+}
+.ip2:focus {
+    padding: 0%;
+    width: 66.5%;
+    margin: 0px;
+    margin-right: 0px;
+    text-align: center;
+    font-size: 2.5vw;
+    border: 0px;
+    background-color: rgba(0,0,0,0.1);
+    float: right;
+}
+#fullyear {
+    margin-top: 4px;
+    padding: 4px;
+    width: 60%;
+    text-align: center;
+    font-size: 2.5vw;
+    border: 0px;
+}
+#yrAccident {
+    font-size: 2vw;
+    width: 30%;
+    border: 0px;
+    background-color: rgba(0,0,0,0.15); 
+    border-radius: 7px;
+}
+#yrIllness {
+    font-size: 2vw;
+    width: 30%;
+    border: 0px;
+    background-color: rgba(0,0,0,0.15); 
+    border-radius: 7px;
+    display: none;
+}
+.names {
+    font-size: 2vw;
+    width: 95%;
+    text-align: center;
+    border: 0px;
+}
+.accill {
+    font-size: 1.1vw;
+    text-align: center;
+    width: 10%;
+    font-weight: bold;
+}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 2%; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 110%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+}
 
-            @keyframes dropDown {
-               0% {top: -1000px; opacity: 0}
-               100% {top: 0; opacity: 1}
-            }
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 6px;
+    border: 1px solid #888;
+    border-radius: 26px;
+    width: 80%;
+    height: 80%;
+    position: relative;
+    animation-name: dropDown;
+    animation-duration: 1s;
+}
 
-            /* The Close Button */
-            .close {
-                color: #aaaaaa;
-                float: right;
-                font-size: 20px;
-                font-weight: bold;
-            }
+@keyframes dropDown {
+    0% {top: -1000px; opacity: 0}
+    100% {top: 0; opacity: 1}
+}
 
-            .close:hover,
-            .close:focus {
-                color: #000;
-                text-decoration: none;
-                cursor: pointer;
-            }
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+}
 
-            #focPages {
-                height: 95%;
-                width: 95%;
-            }
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
 
-            #myBtn {
-                background-color: white;
-                border-width: 0px;
-                border-radius: 10px;
-                transition: background-color 0.5s, color 0.5s;
-            }
-            #myBtn:hover {
-                background-color: black;
-                color: white;
-            }
+#focPages {
+    width: 100%; 
+    height: 100%; 
+    display: none;
+}
 
-            .presBtn {
-                background-color: #4CAF50; /* Green */
-                border: none;
-                border-radius: 10px;
-                outline: none;
-                color: white;
-                width: 18%;
-                padding: 7px 16px;
-                margin-bottom: 4px;
-                text-align: center;
-                text-decoration: none;
-                font-size: 1.15vw;
-                font-family: sans-serif;
-                transition: width 0.5s;
-                cursor: pointer;
-            }
-            
-            .presBtn:hover {
-                width: 20%;
-            }
+#focPagesImg {
+    height: 100%;
+    width: 100%;
+    border-radius: 26px;
+    -webkit-transform: scale(1);
+    -webkit-transform-origin: 0 0;
+}
 
-            #finalButton {
-                background-color: #4CAF50;
-                border: none;
-                border-radius: 6px;
-                outline: none;
-                color: white;
-                width: 100%;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 14px;
-                cursor: pointer;
-                transition: background-color 0.25s;
-            }
-            
-            #finalButton.toggled {
-                background-color: black;
-            }
+#focBtn {
+    background-color: white;
+    border-width: 0px;
+    border-radius: 10px;
+    outline: 0px;
+    transition: background-color 0.5s, color 0.5s;
+}
+#focBtn:hover {
+    background-color: black;
+    color: white;
+}
 
-            #a71Button {
-                background-color: #4CAF50;
-                border: none;
-                border-radius: 6px;
-                outline: none;
-                color: white;
-                width: 100%;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 14px;
-                cursor: pointer;
-                transition: background-color 0.25s;
-            }
-            
-            #a71Button.toggled {
-                background-color: black;
-            }
+.presBtn {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    color: white;
+    width: 90%;
+    padding: 7px 16px;
+    margin-bottom: 4px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.15vw;
+    font-family: sans-serif;
+    transition: width 0.5s;
+    cursor: pointer;
+}
 
-            
-            .bottomBtns:hover {
-                background-color: black;
-            }
-            
-            #h34Button {
-                background-color: #4CAF50;
-                border: none;
-                border-radius: 6px;
-                outline: none;
-                color: white;
-                width: 100%;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 14px;
-                cursor: pointer;
-                transition: background-color 0.25s;
-            }
+.presBtn:hover {
+    width: 95%;
+}
 
-            #h34Button.toggled {
-                background-color: black;
-            }
-            
-            #incomeButton {
-                background-color: #4CAF50;
-                border: none;
-                border-radius: 6px;
-                outline: none;
-                color: white;
-                width: 100%;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 14px;
-                cursor: pointer;
-                transition: background-color 0.25s;
-            }
+.mgaBtn {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    color: white;
+    width: 18%;
+    padding: 7px 16px;
+    margin-bottom: 4px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.15vw;
+    font-family: sans-serif;
+    transition: width 0.5s;
+    cursor: pointer;
+}
 
-            #incomeButton.toggled {
-                background-color: black;
-            }
-            
-            #mortgageButton {
-                background-color: #4CAF50;
-                border: none;
-                border-radius: 6px;
-                outline: none;
-                color: white;
-                width: 100%;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 14px;
-                cursor: pointer;
-                transition: background-color 0.25s;
-            }
+.mgaBtn:hover {
+    width: 20%;
+}
 
-            #mortgageButton.toggled {
-                background-color: black;
-            }
-            
-            #eduButton {
-                background-color: #4CAF50;
-                border: none;
-                border-radius: 6px;
-                outline: none;
-                color: white;
-                width: 100%;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 14px;
-                cursor: pointer;
-                transition: background-color 0.25s;
-            }
+#finalButton {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    color: white;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.25s;
+}
 
-            #eduButton.toggled {
-                background-color: black;
-            }
-            
-            #cancerButton {
-                background-color: #4CAF50;
-                border: none;
-                border-radius: 6px;
-                outline: none;
-                color: white;
-                width: 100%;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 14px;
-                cursor: pointer;
-                transition: background-color 0.25s;
-            }
+#finalButton.toggled {
+    background-color: black;
+}
 
-            #cancerButton.toggled {
-                background-color: black;
-            }
+#a71Button {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    color: white;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.25s;
+}
 
-            #critButton  {
-                background-color: #4CAF50;
-                border: none;
-                border-radius: 6px;
-                outline: none;
-                color: white;
-                width: 100%;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 14px;
-                cursor: pointer;
-                transition: background-color 0.25s;
-            }
-            
-            #critButton.toggled {
-                background-color: black;
-            }
-            
-            #h34Button {
-                background-color: #4CAF50;
-                border: none;
-                border-radius: 6px;
-                color: white;
-                width: 100%;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 14px;
-                cursor: pointer;
-                transition: background-color 0.25s;
-            }
+#a71Button.toggled {
+    background-color: black;
+}
 
-            .addremove {
-                background-color: #4CAF50; /* Green */
-                border: none;
-                border-radius: 10px;
-                outline: none;
-                color: white;
-                width: 18%;
-                padding: 7px 16px;
-                margin-bottom: 4px;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 1.15vw;
-                font-family: sans-serif;
-                transition: width 0.5s;
-            }
 
-            .addremove:hover {
-                cursor: pointer;
-                width: 20%;
-            }
-            
-            #takeover {
-                background-color: #4CAF50; /* Green */
-                border: none;
-                border-radius: 10px;
-                color: white;
-                width: 18%;
-                padding: 7px 16px;
-                margin-bottom: 4px;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 1.15vw;
-                transition: width 0.5s;
-            }
+.bottomBtns:hover {
+    background-color: black;
+}
 
-            #takeover:hover {
-                cursor: pointer;
-                width: 20%;
-            }
-            
-            #container {
-                padding-top: 0.5%;
-                padding-bottom: 1%;
-            }
+#h34Button {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    color: white;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.25s;
+}
 
-            #pageCenter {
-                width: 40%;
-                margin: auto;
-                background-color: white;
-                padding-left: 10px;
-                padding-right: 10px;
-                padding-top: 0.7%;
-                padding-bottom: 1%;
-                border-radius: 12px;
-                display: none;
-            }
-            
-            #pageCenter2 {
-                width: 75%;
-                margin: auto;
-                margin-top: 10%;
-                background-color: white;
-                padding-left: 10px;
-                padding-right: 10px;
-                padding-top: 0.7%;
-                padding-bottom: 0.7%;
-                border-radius: 12px;
-                display: block;
-            }
+#h34Button.toggled {
+    background-color: black;
+}
 
-            .present {
-                display: none; /* Hidden by default */
-                position: fixed; /* Stay in place */
-                z-index: 1; /* Sit on top */
-                left: 0;
-                top: 0;
-                width: 100%; /* Full width */
-                height: 100%; /* Full height */
-                overflow: visible; /* Enable scroll if needed */
-                background-color: rgb(0,0,0); /* Fallback color */
-                background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-            }
+#incomeButton {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    color: white;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.25s;
+}
 
-            .present-content {
-                background-color: rgba(0,0,0,0.9);
-                margin: 1% auto; /* 15% from the top and centered */
-                padding-top: 2vw;
-                padding-bottom: 0vw;
-                padding-left: 2vw;
-                border: 0px;
-                border-radius: 14px;
-                width: 88vw; /* Could be more or less, depending on screen size */
-                height: 90%;
-                overflow: visible;
-            }
+#incomeButton.toggled {
+    background-color: black;
+}
 
-            /* The Close Button */
-            .pclose {
-                color: #aaa;
-                float: right;
-                font-size: 28px;
-                font-weight: bold;
-            }
+#mortgageButton {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    color: white;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.25s;
+}
 
-            .pclose:hover,
-            .pclose:focus {
-                color: black;
-                text-decoration: none;
-                cursor: pointer;
-            }
+#mortgageButton.toggled {
+    background-color: black;
+}
 
-            .wclose {
-                color: #aaa;
-                float: right;
-                font-size: 28px;
-                font-weight: bold;
-            }
+#eduButton {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    color: white;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.25s;
+}
 
-            .wclose:hover,
-            .wclose:focus {
-                color: black;
-                text-decoration: none;
-                cursor: pointer;
-            }
-            
-            #loading {
-                padding-top: 10%;
-            }
-            
-            #loading2 {
-                background-color: rgba(0,0,0,0.7);
-                border-radius: 20px;
-                color: white; 
-                font-size: 5vw; 
-                text-align: center;
-                width: fit-content;
-                padding: 1%;
-                margin-top: 0%;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            
-            .loadingText {
-                font-size: 1.6vw; 
-                position: relative; 
-            }
-            
-            #hmgLogo {
-                position: fixed;
-                opacity: 0.8;
-                height: 100%;
-                width: 100%;
-                z-index: -1;
-            }
-            .radioLabels {
-                font-size: 1.2vw;
-            }
-            
-            .leadInfoCol1 {
-                width: 33%;
-                text-align: right;
-                border: 1px solid black;
-                padding: 0.5%;
-                font-size: 2.5vw;
-            }
-            
-            .leadInfoCol2 {
-                align-content: center;
-                width: 66%;
-                border: 1px solid black;
-                padding: 0.5%;
-            }
-            
-            .leadInfoCol3 {
-                width: 20%;
-                text-align: right;
-                border: 1px solid black;
-                font-size: 2.5vw;
-                padding: 0.5%;
-            }
-            
-            .leadInfoCol4 {
-                align-content: center;
-                width: 40%;
-                border: 1px solid black;
-                padding: 0.5%;
-            }
-            
-            .leadInfoRow {
-                align-content: center;
-                width: 20%;
-                border: 1px solid black;
-                padding: 0.5%;
-            }
-            
-            .toTableHead {
-                text-align: center;
-                border: 1px solid black;
-                padding: 1%;
-                font-size: 3vw;
-                background-color: rgba(0, 0, 0, 0.15);
-            }
-            
-            .toAnswer {
-                margin: auto;
-                text-align: center;
-                width: 95%;
-                font-size: 3vw;
-            }
-            
-            .toAnswer2 {
-                margin: auto;
-                text-align: left;
-                width: 100%;
-                font-size: 3vw;
-            }
-            
-            .tips {
-                font-size: 1.5vw;
-                font-family: sans-serif;
-            }
-            
-            #clearTO {
-                background-color: rgba(219, 0, 0, 1);
-                border: 0px;
-                padding: 1%;
-                width: 10%;
-                font-size: 2.2vw;
-                border-radius: 10px;
-                transition: width 0.5s, font-size 0.5s;
-            }
-            
-            #clearTO:hover {
-                width: 12.5%;
-                font-size: 3vw
-            }
+#eduButton.toggled {
+    background-color: black;
+}
+
+#cancerButton {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    margin-bottom: 3%;
+    color: white;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.25s;
+}
+
+#cancerButton.toggled {
+    background-color: black;
+}
+
+#critButton  {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    color: white;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.25s;
+}
+
+#critButton.toggled {
+    background-color: black;
+}
+
+#h34Button {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.25s;
+}
+
+.addremove {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    color: white;
+    width: 90%;
+    padding: 7px 16px;
+    margin-bottom: 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.15vw;
+    font-family: sans-serif;
+    transition: width 0.5s;
+}
+
+.addremove:hover {
+    cursor: pointer;
+    width: 95%;
+}
+
+#takeover {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    color: white;
+    width: 90%;
+    padding: 7px 16px;
+    margin-bottom: 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.15vw;
+    transition: width 0.5s;
+}
+
+#takeover:hover {
+    cursor: pointer;
+    width: 95%;
+}
+
+#container {
+    padding-top: 0.5%;
+    padding-bottom: 1%;
+}
+
+#pageCenter {
+    width: 40%;
+    margin: auto;
+    background-color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0.7%;
+    padding-bottom: 1%;
+    border-radius: 12px;
+    display: none;
+}
+
+#pageCenter2 {
+    width: 75%;
+    margin: auto;
+    margin-top: 10%;
+    background-color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0.7%;
+    padding-bottom: 0.7%;
+    border-radius: 12px;
+    display: block;
+}
+
+.present {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: visible; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.present-content {
+    background-color: rgba(0,0,0,0.9);
+    margin: 1% auto; /* 15% from the top and centered */
+    padding-top: 2vw;
+    padding-bottom: 0vw;
+    padding-left: 2vw;
+    border: 0px;
+    border-radius: 14px;
+    width: 88vw; /* Could be more or less, depending on screen size */
+    height: 90%;
+    overflow: visible;
+}
+
+#loading {
+    padding-top: 10%;
+}
+
+#loading2 {
+    background-color: rgba(0,0,0,0.7);
+    border-radius: 20px;
+    color: white; 
+    font-size: 5vw; 
+    text-align: center;
+    width: fit-content;
+    padding: 1%;
+    margin-top: 0%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.loadingText {
+    font-size: 1.6vw; 
+    position: relative; 
+}
+
+#hmgLogo {
+    position: fixed;
+    opacity: 0.8;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+.radioLabels {
+    font-size: 1.2vw;
+}
+
+.leadInfoCol1 {
+    width: 33%;
+    text-align: right;
+    border: 1px solid black;
+    padding: 0.5%;
+    font-size: 2.5vw;
+}
+
+.leadInfoCol2 {
+    align-content: center;
+    width: 66%;
+    border: 1px solid black;
+    padding: 0.5%;
+}
+
+.leadInfoCol3 {
+    width: 20%;
+    text-align: right;
+    border: 1px solid black;
+    font-size: 2.5vw;
+    padding: 0.5%;
+}
+
+.leadInfoCol4 {
+    align-content: center;
+    width: 40%;
+    border: 1px solid black;
+    padding: 0.5%;
+}
+
+.leadInfoRow {
+    align-content: center;
+    width: 20%;
+    border: 1px solid black;
+    padding: 0.5%;
+}
+
+.toTableHead {
+    text-align: center;
+    border: 1px solid black;
+    padding: 1%;
+    font-size: 3vw;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.toAnswer {
+    margin: auto;
+    text-align: center;
+    width: 95%;
+    font-size: 3vw;
+}
+
+.toAnswer2 {
+    margin: auto;
+    text-align: left;
+    width: 100%;
+    font-size: 3vw;
+}
+
+.tips {
+    font-size: 1.5vw;
+    font-family: sans-serif;
+}
+
+#clearTO {
+    background-color: rgba(219, 0, 0, 1);
+    border: 0px;
+    padding: 1%;
+    width: 10%;
+    font-size: 2.2vw;
+    border-radius: 10px;
+    transition: width 0.5s, font-size 0.5s;
+}
+
+#clearTO:hover {
+    width: 12.5%;
+    font-size: 3vw
+}
+
+#viewer {
+    display: none; 
+    margin: auto; 
+    border-radius: 26px; 
+    height: 98%; 
+    width: 98%; 
+    top: 0; 
+    bottom: 0; 
+    left: 0; 
+    right: 0; 
+    position: absolute;
+}
+
+#credViewer {
+    display: none; 
+    margin: auto; 
+    border-radius: 26px;
+    height: 98%; 
+    width: 98%; 
+    top: 0; 
+    bottom: 0; 
+    left: 0; 
+    right: 0; 
+    position: absolute;
+    -webkit-transform: scale(1);
+    -webkit-transform-origin: 0 0;
+}
+
+.bRowBtns {
+    cursor: pointer;
+    color: black;
+    font-size: 1.2vw;
+    font-family: sarif;
+    text-decoration: none;
+}
+
+.bRowBtns:hover {
+    color: blue;
+}
+
+.presentation {
+    display: none; 
+    margin: auto; 
+    margin-top: 1.2%;
+}
+
+.loadImgs {
+    text-align: center; 
+    display: none; 
+    height: 95%
+}
+
+.btnDivs {
+    width:20%; 
+    display: inline-block; 
+    float: left; 
+    text-align: center;
+}
+
+#buttons {
+    padding-top: 3px; 
+    display: block; 
+    float: next; 
+    width: 90%; 
+    margin: auto;
+}
+
+#bottomBtnContainer {
+    width: 100%; 
+    padding-top: 2%; 
+    margin-top: 4%; 
+    margin-bottom: 6%; 
+    border-top: 2px solid black;
+}
