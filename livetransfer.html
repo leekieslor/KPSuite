@@ -4,10 +4,25 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="PresStyle.css">
+        <style>
+            body {
+                background-image: url('hmgLogo.jpg');
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+            }
+        </style>
     </head>
-    <body>
-        <div id="container">
-            <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSnzguHUBv2VtmmAZapAuYC12n181_QGbsVaxEeq_j6noU2ZrnbjDj7sLsrQhYdYhGhHAfJuHtHMLEX/pubhtml/sheet?headers=false&amp;gid=0&amp;range=A1:E14" height="400" width="400"></iframe>
+    <body style="background-color: rgba(0,0,0,0.85)" >
+        <div id="pageCenter2" style="margin: auto; text-align: center; width: 41%; opacity: 90%;">
+            
+            <a class="loadingText" style="display: inline-block; margin-bottom: 1%;">NON POS Live Transfer Rotation</a>
+            <iframe id="chart" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSnzguHUBv2VtmmAZapAuYC12n181_QGbsVaxEeq_j6noU2ZrnbjDj7sLsrQhYdYhGhHAfJuHtHMLEX/pubhtml?gid=1478367608&amp;single=false&amp;chrome=false&amp;single=false&amp;widget=false&amp;headers=false&amp;range=a1:e14" height="75%" width="100%"></iframe>
+            <script>
+                window.setInterval("reloadIFrame();", 30000);
+                function reloadIFrame() {
+                    document.getElementById("chart").src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSnzguHUBv2VtmmAZapAuYC12n181_QGbsVaxEeq_j6noU2ZrnbjDj7sLsrQhYdYhGhHAfJuHtHMLEX/pubhtml?gid=1478367608&amp;single=false&amp;chrome=false&amp;single=false&amp;widget=false&amp;headers=false&amp;range=a1:e14";
+                }
+            </script>
         </div>
     </body>
 </html>
