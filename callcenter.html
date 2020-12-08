@@ -31,6 +31,9 @@
                 <button id="pos" class="presBtn" onclick="pos()" tabindex="-1">POS Transfer List</button>
             </div>
             <div>
+                <button id="both" class="presBtn" onclick="both()" tabindex="-1">Both Transfer Lists</button>
+            </div>
+            <div>
                 <button id="log" class="presBtn" onclick="log()" tabindex="-1">Call Center Appointment Log</button>
             </div>
         </div>
@@ -40,6 +43,9 @@
             }
             function pos() {
                 window.location.href = 'postransfer.html';
+            }
+            function both() {
+                window.location.href = 'bothtransfers.html';
             }
             function log() {
                 window.location.href = 'apptlog.html';
