@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="PresStyle.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <style>
             body {
                 background-image: url('hmgLogo.jpg');
@@ -22,6 +23,23 @@
                 function reloadIFrame() {
                     document.getElementById("chart").src="https://docs.google.com/spreadsheets/d/1zSbKQDN-gVuaG-A98WiaGKqQwj1k4AAHYSET8iTXS6s/htmlembed/sheet?gid=1478367608&range=a1:e17";
                 }
+                
+            </script>
+            <script>
+                window.onload = function () {
+                    if (window.innerWidth >= 1350) {
+                        $("#pageCenter2").animate({width: '46%'}, 250);
+                    } else if (window.innerWidth <=1200) {
+                        $("#pageCenter2").animate({width: '50%'}, 250);
+                    }
+                };
+                window.onresize = function () {
+                    if (window.innerWidth >= 1350) {
+                        $("#pageCenter2").animate({width: '46%'}, 250);
+                    } else if (window.innerWidth <=1280) {
+                        $("#pageCenter2").animate({width: '50%'}, 250);
+                    }
+                };
             </script>
         </div>
     </body>
