@@ -7,6 +7,9 @@ and open the template in the editor.
     Created on : Oct 25, 2020, 4:32:47 PM
     Author     : Lee Kieslor Jr
 */
+html {
+    scroll-behavior: smooth;
+}
 
 table {
     border-collapse: collapse;
@@ -717,4 +720,19 @@ td {
     margin-top: 4%; 
     margin-bottom: 6%; 
     border-top: 2px solid black;
+}
+
+.transferlist {
+    width: 50%;
+    margin: auto;
+    margin-top: 0.7%;
+    background-color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0.7%;
+    padding-bottom: 0.7%;
+    border-radius: 12px;
+    display: none;
+    text-align: center;
+    opacity: 90%;
 }
