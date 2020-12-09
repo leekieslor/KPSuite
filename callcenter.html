@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="PresStyle.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <style>
             body {
                 background-image: url('hmgLogo.jpg');
@@ -20,6 +21,7 @@
         </style>
     </head>
     <body>
+        <!-- Choose chart section -->
         <div id="pageCenter2" style="margin: auto; text-align: center; width: 50%; opacity: 90%;">
             <div style="width: 100%;">
                 <a class="loadingText" style="display: block; margin-bottom: 1%;">Choose Log:</a>
@@ -37,19 +39,70 @@
                 <button id="log" class="presBtn" onclick="log()" tabindex="-1">Call Center Appointment Log</button>
             </div>
         </div>
+        
+        <!-- chart containsers -->
+        <div id="nonpostransfer" class="transferlist">
+            <a class="loadingText" style="display: inline-block; margin-bottom: 1%;">NON POS Live Transfer Rotation</a>
+            <iframe id="nonposchart" src="https://docs.google.com/spreadsheets/d/13HH1UXi_Z4oEDsrUJC4f7QWDyeRSN98m6d5BXNSjEkE/htmlembed/sheet?gid=1478367608&range=a1:e14" height="90%" width="100%"></iframe>
+        </div>
+        
+        <div id="postransfer" class="transferlist">
+            <a class="loadingText" style="display: inline-block; margin-bottom: 1%;">POS Live Transfer Rotation</a>
+            <iframe id="poschart" src="https://docs.google.com/spreadsheets/d/1zSbKQDN-gVuaG-A98WiaGKqQwj1k4AAHYSET8iTXS6s/htmlembed/sheet?gid=1478367608&range=a1:e17" height="90%" width="100%"></iframe>
+        </div>
+        
+        <div id="apptlog" class="transferlist" style="width: 98%">
+            <a class="loadingText" style="display: inline-block; margin-bottom: 0%;">Call Center Appointment Log</a>
+            <iframe id="apptchart" src="https://docs.google.com/spreadsheets/d/1GwxdLfow4NEUbrqm6W6Vl_LGnXmqdWSX/htmlembed/sheet?gid=914485671&range=a3:k" height="90%" width="100%"></iframe>
+        </div>
+        
         <script>
             function nonPos() {
-                window.location.href = 'livetransfer.html';
+                $('#pageCenter2').slideUp(500);
+                $('#nonpostransfer').slideDown(750);
             }
+            window.setInterval("reloadIFrame();", 5000);
+            function reloadIFrame() {
+                document.getElementById("nonposchart").src="https://docs.google.com/spreadsheets/d/13HH1UXi_Z4oEDsrUJC4f7QWDyeRSN98m6d5BXNSjEkE/htmlembed/sheet?gid=1478367608&range=a1:e14";
+            }
+            
             function pos() {
-                window.location.href = 'postransfer.html';
+                $('#pageCenter2').slideUp(500);
+                $('#postransfer').slideDown(750);
             }
+            window.setInterval("reloadIFrame2();", 5000);
+            function reloadIFrame2() {
+                document.getElementById("poschart").src="https://docs.google.com/spreadsheets/d/1zSbKQDN-gVuaG-A98WiaGKqQwj1k4AAHYSET8iTXS6s/htmlembed/sheet?gid=1478367608&range=a1:e17";
+            }
+                
             function both() {
                 window.location.href = 'bothtransfers.html';
             }
+            
             function log() {
-                window.location.href = 'apptlog.html';
+                $('#pageCenter2').slideUp(500);
+                $('#apptlog').slideDown(750);
             }
+            
+            window.onload = function () {
+                if (window.innerWidth >= 1350) {
+                    $("#postransfer").animate({width: '47%'}, 250);
+                    $("#nonpostransfer").animate({width: '47%'}, 250);
+                } else if (window.innerWidth <=1200) {
+                    $("#postransfer").animate({width: '50%'}, 250);
+                    $("#nonpostransfer").animate({width: '50%'}, 250);
+                }
+            };
+            window.onresize = function () {
+                if (window.innerWidth >= 1350) {
+                    $("#postransfer").animate({width: '47%'}, 250);
+                    $("#nonpostransfer").animate({width: '47%'}, 250);
+                } else if (window.innerWidth <=1280) {
+                    $("#postransfer").animate({width: '50%'}, 250);
+                    $("#nonpostransfer").animate({width: '50%'}, 250);
+                }
+            };
+            
         </script>
     </body>
 </html>
