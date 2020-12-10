@@ -73,11 +73,6 @@
         </div>
         
         <script>
-            window.setInterval("reloadIFrame4();", 5000);
-            function reloadIFrame4() {
-                document.getElementById("chart4").src="https://docs.google.com/spreadsheets/d/13HH1UXi_Z4oEDsrUJC4f7QWDyeRSN98m6d5BXNSjEkE/htmlembed/sheet?gid=1478367608&range=a1:e14";
-            }
-            
             function nonPos() {
                 $('#pageCenter2').slideUp(500);
                 $('#nonpostransfer').slideDown(750);
@@ -98,11 +93,15 @@
                 
             function both() {
                 $('#pageCenter2').slideUp(500);
-                $('#bothlists').slideDown(750);
+                $('#bothlists').slideDown(1000);
             }
             window.setInterval("reloadIFrame3();", 5000);
             function reloadIFrame3() {
                 document.getElementById("chart3").src="https://docs.google.com/spreadsheets/d/1zSbKQDN-gVuaG-A98WiaGKqQwj1k4AAHYSET8iTXS6s/htmlembed/sheet?gid=1478367608&range=a1:e17";
+            }
+            window.setInterval("reloadIFrame4();", 5000);
+            function reloadIFrame4() {
+                document.getElementById("chart4").src="https://docs.google.com/spreadsheets/d/13HH1UXi_Z4oEDsrUJC4f7QWDyeRSN98m6d5BXNSjEkE/htmlembed/sheet?gid=1478367608&range=a1:e14";
             }
             
             function log() {
