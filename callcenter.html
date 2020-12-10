@@ -148,6 +148,13 @@
                     $('#pageCenter2').slideDown(750);
                 }
             }
+            document.onkeydown = function() {
+            switch (window.event.keyCode) {
+                case 37:
+                    back();
+                    break;
+                }
+            };
         </script>
     </body>
 </html>
