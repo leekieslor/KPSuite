@@ -21,6 +21,9 @@
         </style>
     </head>
     <body>
+        <div id="arrowbox" onclick="back()">
+            <a id="backarrow">&larr;</a>
+        </div>
         <!-- Choose chart section -->
         <div id="pageCenter2" style="margin: auto; text-align: center; width: 50%; opacity: 90%;">
             <div style="width: 100%;">
@@ -81,7 +84,7 @@
             
             function log() {
                 $('#pageCenter2').slideUp(500);
-                $('#apptlog').slideDown(750);
+                $('#apptlog').slideDown(1000);
             }
             
             window.onload = function () {
@@ -103,6 +106,22 @@
                 }
             };
             
+            var main = document.getElementById("pageCenter2").style.display;
+            var trans1 = document.getElementById("nonpostransfer").style.display;
+            var trans2 = document.getElementById("postransfer").style.display;
+            var appt = document.getElementById("apptlog").style.display;
+            function back() {
+                if (trans1 != 'block') {
+                    $('#nonpostransfer').slideUp(750);
+                    $('#pageCenter2').slideDown(750);
+                } if (trans2 != 'block') {
+                    $('#postransfer').slideUp(750);
+                    $('#pageCenter2').slideDown(750);
+                } if (appt != 'block') {
+                    $('#apptlog').slideUp(1000);
+                    $('#pageCenter2').slideDown(750);
+                }
+            }
         </script>
     </body>
 </html>
