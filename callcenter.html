@@ -41,6 +41,9 @@
             <div>
                 <button id="log" class="presBtn" onclick="log()" tabindex="-1">Call Center Appointment Log</button>
             </div>
+            <div>
+                <button id="cal" class="presBtn" onclick="cal()" tabindex="-1">Team Schedules</button>
+            </div>
         </div>
         
         <!-- chart containsers -->
@@ -70,6 +73,10 @@
                     <iframe id="chart4" src="https://docs.google.com/spreadsheets/d/13HH1UXi_Z4oEDsrUJC4f7QWDyeRSN98m6d5BXNSjEkE/htmlembed/sheet?gid=1478367608&range=a1:e14" height="90%" width="100%"></iframe>
                 </div>
             </div>
+        </div>
+        
+        <div id="calendar" class="transferlist" style="width: 78%">
+            <iframe id="calchart" src="https://docs.google.com/spreadsheets/d/1tnzqa5YeVbXDZMyKjSTfs2mP5Tq23_XoQQstsnziU3c/htmlembed/sheet?gid=0&range=a1:g8" height="98%" width="100%"></iframe>
         </div>
         
         <script>
@@ -109,6 +116,11 @@
                 $('#apptlog').slideDown(1000);
             }
             
+            function cal() {
+                $('#pageCenter2').slideUp(500);
+                $('#calendar').slideDown(750);
+            }
+            
             window.onload = function () {
                 if (window.innerWidth >= 1350) {
                     $("#postransfer").animate({width: '47%'}, 250);
@@ -133,6 +145,7 @@
             var trans2 = document.getElementById("postransfer").style.display;
             var lists = document.getElementById('bothlists').style.display;
             var appt = document.getElementById("apptlog").style.display;
+            var calpage = document.getElementById("calendar").style.display;
             function back() {
                 if (trans1 != 'block') {
                     $('#nonpostransfer').slideUp(750);
@@ -145,6 +158,9 @@
                     $('#pageCenter2').slideDown(750);
                 } if (appt != 'block') {
                     $('#apptlog').slideUp(1000);
+                    $('#pageCenter2').slideDown(750);
+                } if (calpage != 'block') {
+                    $('#calendar').slideUp(1000);
                     $('#pageCenter2').slideDown(750);
                 }
             }
